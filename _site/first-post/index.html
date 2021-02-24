@@ -9,28 +9,32 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Site Title</title>
-<meta name="description" content="An amazing website.">
+<!-- begin _includes/seo.html --><title>First Post - Site Title</title>
+<meta name="description" content="Front Matter   date: 2021-02-24 title: “Jekyll 첫번째 글” categories: blog tags: jekyll 목차 toc: true toc_sticky: true  —">
 
 
   <meta name="author" content="Your Name">
   
+  <meta property="article:author" content="Your Name">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Site Title">
-<meta property="og:title" content="Site Title">
-<meta property="og:url" content="/">
+<meta property="og:title" content="First Post">
+<meta property="og:url" content="/first-post/">
 
 
-  <meta property="og:description" content="An amazing website.">
-
-
-
+  <meta property="og:description" content="Front Matter   date: 2021-02-24 title: “Jekyll 첫번째 글” categories: blog tags: jekyll 목차 toc: true toc_sticky: true  —">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2021-02-24T00:00:00+09:00">
 
 
 
@@ -41,7 +45,7 @@
   
 
 
-<link rel="canonical" href="/">
+<link rel="canonical" href="/first-post/">
 
 
 
@@ -104,7 +108,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -260,33 +264,18 @@
 
 
 
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title"></h1>
-    
-    
-
-<h3 class="archive__subtitle">Recent posts</h3>
-
-
-
-
-<div class="entries-list">
-  
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="First Post">
+    <meta itemprop="description" content="Front Matterdate: 2021-02-24title: “Jekyll 첫번째 글”categories: blogtags: jekyll목차toc: truetoc_sticky: true —">
+    <meta itemprop="datePublished" content="2021-02-24T00:00:00+09:00">
     
 
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="/first-post/" rel="permalink">First Post
-</a>
-      
-    </h2>
-    
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">First Post
+</h1>
+          
 
   <p class="page__meta">
     
@@ -307,29 +296,69 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Front Matter
+        </header>
+      
 
-
-date: 2021-02-24
+      <section class="page__content" itemprop="text">
+        
+        <h1 id="front-matter">Front Matter</h1>
+<hr />
+<p>date: 2021-02-24
 title: “Jekyll 첫번째 글”
 categories: blog
-tags: jekyll
-목차
-toc: true
+tags: jekyll</p>
+<h1 id="목차">목차</h1>
+<p>toc: true<br />
 toc_sticky: true 
-—
-</p>
-  </article>
-</div>
+—</p>
 
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-02-24T00:00:00+09:00">February 24, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=First+Post%20%2Ffirst-post%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Ffirst-post%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Ffirst-post%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+            
+      </div>
+    </div>
   
 </div>
 
-
-
-
-  </div>
-</div>
     </div>
 
     
