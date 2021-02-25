@@ -1,0 +1,31 @@
+I"�<p>zerodotone의 첫 포스팅인 것인가</p>
+
+<blockquote>
+  <p>이것은 인용인 것인가</p>
+</blockquote>
+
+<ol>
+  <li>
+    <h2 id="이것은-단락인-것인가-header-2-인-것인가">이것은 단락인 것인가 header 2 인 것인가</h2>
+  </li>
+</ol>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">swift</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">"이것은 코드인 것인가"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이것은 코드인 것이다.</p>
+
+<ol>
+  <li>
+    <h2 id="하나-둘-셋">하나 둘 셋</h2>
+  </li>
+</ol>
+
+<p>이것은 하나 둘 셋 인 것인가</p>
+
+<blockquote>
+  <p><a href="https://zdodev.github.io">내 블로그인 것이야</a></p>
+</blockquote>
+:ET
