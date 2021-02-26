@@ -4,4 +4,10 @@ var store = [{
         "tags": [],
         "url": "/etc/first-post/",
         "teaser": null
+      },{
+        "title": "iOS link",
+        "excerpt":"링크 모음   Xcode 프로젝트 컨벤션: Xcode 프로젝트 구성 시 네이밍 컨벤션 도움글.   ","categories": ["iOS"],
+        "tags": [],
+        "url": "/ios/iOS-link/",
+        "teaser": null
       }]
