@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-02-27T01:56:08+09:00</updated><id>/feed.xml</id><title type="html">zerodotone</title><subtitle>An amazing website.</subtitle><author><name>zerodotone</name></author><entry><title type="html">iOS link</title><link href="/ios/iOS-link/" rel="alternate" type="text/html" title="iOS link" /><published>2021-02-27T00:00:00+09:00</published><updated>2021-02-27T10:51:00+09:00</updated><id>/ios/iOS-link</id><content type="html" xml:base="/ios/iOS-link/">&lt;p&gt;링크 모음&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-03T17:15:02+09:00</updated><id>/feed.xml</id><title type="html">zerodotone</title><subtitle>An amazing website.</subtitle><author><name>zerodotone</name></author><entry><title type="html">UML Class Diagram</title><link href="/uml/swift/UML-Class-Diagram/" rel="alternate" type="text/html" title="UML Class Diagram" /><published>2021-03-03T00:00:00+09:00</published><updated>2021-03-04T01:29:00+09:00</updated><id>/uml/swift/UML-Class-Diagram</id><content type="html" xml:base="/uml/swift/UML-Class-Diagram/">&lt;p&gt;Class Diagram, 클래스 다이어그램&lt;/p&gt;
+
+&lt;p&gt;클래스 다이어그램은 클래스 내부의 정적인 내용이나 클래스 사이의 관계를 표현할 수 있는 다이어그램이다. 클래스 내부의 변수, 메서드를 표현하고 각 클래스간의 관계(상속, 참조 등)을 나타낼 수 있다. 한 마디로 소스코드에 나타난 타입간의 의존 관계를 모두 나타낸다.&lt;/p&gt;
+
+&lt;p&gt;클래스 다이어그램의 구성 요소&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-03-4-34-52-class-diagram-element.png&quot; alt=&quot;2021-03-03-4-34-52-class-diagram-element&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;abstract: 추상 클래스는 구현체가 없는 1개 이상의 추상 메서드를 가지고 있는 클래스입니다.&lt;/li&gt;
+  &lt;li&gt;annotation: annotation의 경우 Java 5에서 추가된 기능으로 @Override, @Deprecated 와 같은 annotation이 있다.&lt;/li&gt;
+  &lt;li&gt;class: 객체지향 언어에서의 클래스입니다.&lt;/li&gt;
+  &lt;li&gt;entity: 시스템이 동작할 때 오랫동안 그 값이 유지되어야 하는 클래스?&lt;/li&gt;
+  &lt;li&gt;enum: 열거형을 나타냅니다.&lt;/li&gt;
+  &lt;li&gt;interface: 인터페이스를 나타냅니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;관계의-종류&quot;&gt;관계의 종류&lt;/h2&gt;
+
+&lt;p&gt;클래스간에는 다양한 관계가 있을 수 있으며 표현 방식도 다양합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;association-연관-관계&quot;&gt;Association, 연관 관계&lt;/h3&gt;
+
+&lt;p&gt;다른 객체의 참조를 가지는 인스턴스 변수를 가지고 있을 때 두 클래스는 연관 관계라고 한다. 아래 그램은 Phone 클래스가 Button 클래스를 참조하는 연관 관계를 보여줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-03-5-06-02-association.png&quot; alt=&quot;2021-03-03-5-06-02-association&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;연관 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Phone&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	&lt;span class=&quot;c1&quot;&gt;// buttons 프로퍼티의 타입이 Button 클래스&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Button&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>zerodotone</name></author><category term="UML" /><category term="Swift" /><summary type="html">Class Diagram, 클래스 다이어그램</summary></entry><entry><title type="html">iOS link</title><link href="/ios/iOS-link/" rel="alternate" type="text/html" title="iOS link" /><published>2021-02-27T00:00:00+09:00</published><updated>2021-02-27T10:51:00+09:00</updated><id>/ios/iOS-link</id><content type="html" xml:base="/ios/iOS-link/">&lt;p&gt;링크 모음&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://theswiftdev.com/conventions-for-xcode/&quot;&gt;Xcode 프로젝트 컨벤션&lt;/a&gt;: Xcode 프로젝트 구성 시 네이밍 컨벤션 도움글.&lt;/p&gt;</content><author><name>zerodotone</name></author><category term="iOS" /><summary type="html">링크 모음</summary></entry><entry><title type="html">first post</title><link href="/etc/first-post/" rel="alternate" type="text/html" title="first post" /><published>2021-02-24T00:00:00+09:00</published><updated>2021-02-26T11:35:00+09:00</updated><id>/etc/first-post</id><content type="html" xml:base="/etc/first-post/">&lt;p&gt;zerodotone의 첫 포스팅인 것인가&lt;/p&gt;
 
