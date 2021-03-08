@@ -16,4 +16,10 @@ var store = [{
         "tags": [],
         "url": "/uml/swift/UML-Class-Diagram/",
         "teaser": null
+      },{
+        "title": "macOS 초기 설정하기",
+        "excerpt":"키보드 누르고 있을 때 반복 입력하도록 수정   터미널이나 메모장에서 키보드를 누르고 있으면 문자가 하나만 입력되는데 키보드를 누르고 있으면 계속 입력되도록 변경하려면 터미널에서 다음의 명령을 실행합니다.   defaults write -g ApplePressAndHoldEnabled -bool false   해당 명령을 실행하고 프로그램을 다시 실행시키면 문자를 계속 입력 할 수 있습니다.  ","categories": ["macOS","Preferences"],
+        "tags": [],
+        "url": "/macos/preferences/macOS-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/",
+        "teaser": null
       }]
