@@ -18,8 +18,14 @@ var store = [{
         "teaser": null
       },{
         "title": "macOS 초기 설정하기",
-        "excerpt":"키보드 누르고 있을 때 반복 입력하도록 수정   터미널이나 메모장에서 키보드를 누르고 있으면 문자가 하나만 입력되는데 키보드를 누르고 있으면 계속 입력되도록 변경하려면 터미널에서 다음의 명령을 실행합니다.   defaults write -g ApplePressAndHoldEnabled -bool false   해당 명령을 실행하고 프로그램을 다시 실행시키면 문자를 계속 입력 할 수 있습니다.  ","categories": ["macOS","Preferences"],
+        "excerpt":"키보드 누르고 있을 때 반복 입력하도록 수정 터미널이나 메모장에서 키보드를 누르고 있으면 문자가 하나만 입력되는데 키보드를 누르고 있으면 계속 입력되도록 변경하려면 터미널에서 다음의 명령을 실행합니다. defaults write -g ApplePressAndHoldEnabled -bool false 해당 명령을 실행하고 프로그램을 다시 실행시키면 문자를 계속 입력 할 수 있습니다. 중간중간 점(.) 입력될 때 해당 기능 끄기...","categories": ["macOS","Preferences"],
         "tags": [],
         "url": "/macos/preferences/macOS-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "Vapor(Swift Server Side Web Framework)",
+        "excerpt":"Vapor란? Vapor는 Swift로 작성된 오픈소스 웹 프레임워크입니다. RESful API, 웹 앱을 지원하고, 웹 소켓을 사용하여 실시간 애플리케이션을 만드는데 사용할 수 있습니다. 그 외에도 ORM, 템플릿 언어 및 패키지를 제공하여 사용자 인증, 인가 기능을 용이하게 합니다. Vapor 설치하기 Vapor를 설치하기 위해서 Xcode, homebrew 가 설치되어 있어야 합니다. 이후 다음과 같이 Vapor를...","categories": ["Vapor","Web Framework"],
+        "tags": [],
+        "url": "/vapor/web%20framework/Vapor(Swift-Server-Side-Framework)-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/",
         "teaser": null
       }]
