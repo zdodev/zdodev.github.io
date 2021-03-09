@@ -28,4 +28,10 @@ var store = [{
         "tags": [],
         "url": "/vapor/web%20framework/Vapor(Swift-Server-Side-Framework)-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/",
         "teaser": null
+      },{
+        "title": "macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)",
+        "excerpt":"xcrun: error: invalid active developer path 에러 해결하기   macOS 업데이트 후 xcrun: error: invalid active developer path 관련 에러가 출력될 때가 있습니다. 특히 Big Sur 업데이트 이후 계속 발생하여 해결방법을 정리해보았습니다.      다음 명령어를 실행하여 command line developer tools를 재설치하면 문제가 해결됩니다.   xcode-select --install   ","categories": ["macOS"],
+        "tags": [],
+        "url": "/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/",
+        "teaser": null
       }]
