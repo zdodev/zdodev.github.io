@@ -28,9 +28,16 @@ Class Diagram, 클래스 다이어그램
 
 클래스간에는 다양한 관계가 있을 수 있으며 표현 방식도 다양합니다.
 
+- Association
+- Inheritance, Generalization
+- Implementation, Realization
+- Dependency
+- Aggregation
+- Composition
+
 ### Association, 연관 관계
 
-다른 객체의 참조를 가지는 인스턴스 변수를 가지고 있을 때 두 클래스는 연관 관계라고 한다. 아래 그램은 Phone 클래스가 Button 클래스를 참조하는 연관 관계를 보여줍니다.
+다른 객체의 참조를 가지는 인스턴스 변수를 가지고 있을 때 두 클래스는 연관 관계라고 합니다. 아래 그램은 Phone 클래스가 Button 클래스를 참조하는 연관 관계를 보여줍니다.
 
 ![2021-03-03-5-06-02-association](/assets/image/2021-03-03-5-06-02-association.png)
 
@@ -39,11 +46,103 @@ Class Diagram, 클래스 다이어그램
 ```swift
 class Phone {
   	// buttons 프로퍼티의 타입이 Button 클래스
-    let buttons: Button = Button()
+    let button: Button
 }
 
 class Button {
     
+}
+```
+
+---
+
+### Inheritance, Generalization, 상속 관계, 일반화 관계
+
+객체지향 개념에서 상속을 나타내는 관계입니다. 한 클래스가 다른 클래스를 포함하는 상위 개념일 때 이를 일반화 관계라고 합니다.
+
+```swift
+class Employee {
+  
+}
+
+class SalariedEmployee: Employee {
+  
+}
+```
+
+---
+
+### Implementation, Realization, 구현 관계, 실체화 관계
+
+객체지향 개념에서 (인터페이스) 구현을 나타내는 관계입니다. 한 클래스가 인터페이스를 구현할 경우 이를 실체화 관계라고 합니다.
+
+```swift
+protocol ButtonListener {
+  
+}
+
+class ButtonListenerAdapter: ButtonListener {
+  
+}
+```
+
+---
+
+### Dependency, 의존 관계
+
+한 클래스가 다른 클래스를 참조하는 관계입니다. 한 클래스의 내부 프로퍼티에 저장하지 않고 사용하는 관계를 의존 관계라고 합니다.
+
+```swift
+class Schedule {
+    func date() {
+      
+    }
+}
+
+class User {
+    func createSchedule() -> Schedule {
+        Schedule()
+    }
+  
+    func useSchedule(schedule: Schedule) {
+        schedule.date()
+    }
+}
+```
+
+---
+
+### Aggregation, 집합 관계
+
+클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 내부 프로퍼티로 가지고 있지만 라이프 타임이 독립적인 관계를 집합 관계라고 합니다.
+
+```swift
+class Part {
+  
+}
+
+class Whole {
+    let part: Part
+
+    init(part: Part) {
+        self.part = part
+    }
+}
+```
+
+---
+
+### Composition, 합성 관계
+
+클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 직접 생성하고 내부 프로퍼티에 할당하여 가지고 있어 라이프 타임이 종속적인 관계를 합성 관계라고 합니다.
+
+```swift
+class Ward {
+  
+}
+
+class Owner {
+    let ward: Ward = Ward()
 }
 ```
 
