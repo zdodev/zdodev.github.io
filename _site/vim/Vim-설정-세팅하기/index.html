@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>macOS Command Line Tool 프로젝트에 Unit Test 추가하기 - zerodotone</title>
-<meta name="description" content="macOS 프로젝트에서 테스트 생성하기">
+<!-- begin _includes/seo.html --><title>Vim 환경설정 세팅하기 - zerodotone</title>
+<meta name="description" content="Vim 환경설정 세팅하기">
 
 
   <meta name="author" content="zerodotone">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="zerodotone">
-<meta property="og:title" content="macOS Command Line Tool 프로젝트에 Unit Test 추가하기">
-<meta property="og:url" content="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">
+<meta property="og:title" content="Vim 환경설정 세팅하기">
+<meta property="og:url" content="/vim/Vim-%EC%84%A4%EC%A0%95-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/">
 
 
-  <meta property="og:description" content="macOS 프로젝트에서 테스트 생성하기">
-
-
-
+  <meta property="og:description" content="Vim 환경설정 세팅하기">
 
 
 
 
-  <meta property="article:published_time" content="2021-03-10T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-03-10T20:00:00+09:00">
+  <meta property="article:published_time" content="2021-03-11T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-03-11T09:19:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">
+
+<link rel="canonical" href="/vim/Vim-%EC%84%A4%EC%A0%95-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/">
 
 
 
@@ -285,15 +285,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="macOS Command Line Tool 프로젝트에 Unit Test 추가하기">
-    <meta itemprop="description" content="macOS 프로젝트에서 테스트 생성하기">
-    <meta itemprop="datePublished" content="2021-03-10T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-03-10T20:00:00+09:00">
+    <meta itemprop="headline" content="Vim 환경설정 세팅하기">
+    <meta itemprop="description" content="Vim 환경설정 세팅하기">
+    <meta itemprop="datePublished" content="2021-03-11T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-11T09:19:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">macOS Command Line Tool 프로젝트에 Unit Test 추가하기
+          <h1 id="page-title" class="page__title" itemprop="headline">Vim 환경설정 세팅하기
 </h1>
           
 
@@ -302,7 +302,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-03-10T00:00:00+09:00">March 10, 2021</time>
+        <time datetime="2021-03-11T00:00:00+09:00">March 11, 2021</time>
       </span>
     
 
@@ -315,7 +315,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          2 분 소요
         
       </span>
     
@@ -330,58 +330,113 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#macos-프로젝트에서-테스트-생성하기">macOS 프로젝트에서 테스트 생성하기</a></li></ul>
+              <ul class="toc__menu"><li><a href="#vim-환경설정-세팅하기">Vim 환경설정 세팅하기</a><ul><li><a href="#플러그인-검색">플러그인 검색</a></li><li><a href="#플러그인-설치">플러그인 설치</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h3 id="macos-프로젝트에서-테스트-생성하기">macOS 프로젝트에서 테스트 생성하기</h3>
+        <h3 id="vim-환경설정-세팅하기">Vim 환경설정 세팅하기</h3>
 
-<p>Xcode에서 순수하게 Swift만을 다루기 위해 macOS Command Line Tool 프로젝트를 생성할 때가 종종 있는데, 이때 테스트를 포함해서 생성하는 기능이 없어서 프로젝트 생성 후 Unit Test를 추가하는 방법을 정리해보았습니다.</p>
+<p>Vundle은 Vim Bundle을 줄인 말로 Vim 플러그인을 관리하는 플러그인입니다.</p>
 
-<p>Xcode를 실행한 후 <code class="language-plaintext highlighter-rouge">Create a new Xcode project</code>를 클릭합니다.</p>
+<p>Vundle을 설치하는 방법은 다음과 같습니다.</p>
 
-<p><img src="/assets/image/2021-03-09-21-24-52-Unit-Test.png" alt="2021-03-09-21-24-52-Unit-Test" /></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+vi ~/.vimrc
+</code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">macOS</code> 플랫폼에서 <code class="language-plaintext highlighter-rouge">Command Line Tool</code>을 선택합니다.</p>
+<p>다음의 내용을 입력합니다.</p>
 
-<p><img src="/assets/image/2021-03-09-21-25-42-Unit-Test.png" alt="2021-03-09-21-25-42-Unit-Test" /></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set </span>rtp+<span class="o">=</span>~/.vim/bundle/vundle/
+call vundle#begin<span class="o">()</span><span class="s2">"
+Bundle 'gmarik/Vundle.vim'
+Plugin 'The-NERD-tree'
+Bundle 'davidhalter/jedi-vim'
+call vundle#end()
+filetype plugin indent on
+</span></code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">Product Name</code>을 입력한 후 프로젝트를 생성합니다.</p>
+<h4 id="플러그인-검색">플러그인 검색</h4>
 
-<p><img src="/assets/image/2021-03-09-21-25-49-Unit-Test.png" alt="2021-03-09-21-25-49-Unit-Test" /></p>
+<p>:PluginSearch <이름></이름></p>
 
-<p>프로젝트 환경설정 중앙 왼쪽에 있는 <code class="language-plaintext highlighter-rouge">TARGETS</code> 탭  가장 하단의 <code class="language-plaintext highlighter-rouge">+</code> 버튼을 클릭합니다.</p>
+<h4 id="플러그인-설치">플러그인 설치</h4>
 
-<p><img src="/assets/image/2021-03-09-21-26-09-Unit-Test.png" alt="2021-03-09-21-26-09-Unit-Test" /></p>
+<p>:PluginInstall <이름> // 특정 플러그인 설치</이름></p>
 
-<p><code class="language-plaintext highlighter-rouge">macOS</code> 플랫폼에서 Unit을 검색하여 <code class="language-plaintext highlighter-rouge">Unit Testing Bundle</code> 을 선택합니다.</p>
+<p>:BundleInstall // vimrc에 적힌 플러그인 전체 설치</p>
 
-<p><img src="/assets/image/2021-03-09-21-26-23-Unit-Test.png" alt="2021-03-09-21-26-23-Unit-Test" /></p>
+<p>The NERD tree 플러그인은 Finder처럼 사용할 수 있는 Vim 디렉터리 탐색기입니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Product Name</code> 을 입력하고 테스트를 생성합니다.</p>
+<p>받은 파일을 플러그인 디렉터리에 놓고 압축을 풀면 설치가 완료됩니다.</p>
 
-<p><img src="/assets/image/2021-03-09-21-26-28-Unit-Test.png" alt="2021-03-09-21-26-28-Unit-Test" /></p>
+<p>vi 입력창에서 :NERDTree 명령을 입력하면 적용됩니다.</p>
 
-<p>화면 상단의 터미널 아이콘이 있는 <code class="language-plaintext highlighter-rouge">MyApp</code> 을 클릭합니다. (아까 클릭한 TARGETS 탭에서 최상단으로 바로 올라가면 됩니다.) 클릭 후 <code class="language-plaintext highlighter-rouge">Edit Scheme</code> 을 클릭합니다.</p>
+<p>:NERDTree [ start-directory | bookmark ]</p>
 
-<p><img src="/assets/image/2021-03-09-21-26-50-Unit-Test.png" alt="2021-03-09-21-26-50-Unit-Test" /></p>
+<p>:NERDTreeClose // NERD tree 창을 닫습니다.</p>
 
-<p>Test 탭에서 하단의 <code class="language-plaintext highlighter-rouge">+</code> 버튼을 클릭합니다.</p>
+<p>&lt;CR&gt;, o는 디렉터리를 이동하거나 파일을 엽니다.</p>
 
-<p><img src="/assets/image/2021-03-09 at 9.26.56 PM-Unit-Test.png" alt="2021-03-09 at 9.26.56 PM-Unit-Test" /></p>
+<p>t는 파일을 새로운 탭에 엽니다.</p>
 
-<p>이전에 생성한 Test를 선택하고 <code class="language-plaintext highlighter-rouge">Add</code> 를 클릭합니다.</p>
+<p>T는 파일을 새로운 탭의 백그라운드로 엽니다.</p>
 
-<p><img src="/assets/image/2021-03-09 at 9.27.00 PM-Unit-Test.png" alt="2021-03-09 at 9.27.00 PM-Unit-Test" /></p>
+<p>x는 현재 선택된 노드를 닫고 상위 노드로 이동합니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">main.swift</code> 에서 테스트할 코드를 작성하고 오른쪽 <code class="language-plaintext highlighter-rouge">Target Membership</code> 탭에서 <code class="language-plaintext highlighter-rouge">Tests</code>(생성한 테스트이름) 체크박스를 선택합니다.</p>
+<p>X는 현재 선택된 노드를 포함하여 하위 노드를 모두 닫습니다.</p>
 
-<p><img src="/assets/image/2021-03-09 at 9.29.19 PM-Unit-Test.png" alt="2021-03-09 at 9.29.19 PM-Unit-Test" /></p>
+<p>e는 선택된 노드를 새 창에서 엽니다.</p>
 
-<p>테스트 코드를 작성하고 테스트를 수행하면 정상적으로 테스트가 수행되는 것을 확인할 수 있습니다.😎</p>
+<hr />
 
-<p><img src="/assets/image/2021-03-09 at 9.29.59 PM-Unit-Test.png" alt="2021-03-09 at 9.29.59 PM-Unit-Test" /></p>
+<p>Vim 환경설정</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>et nocompatible           <span class="s2">" Use Vim defaults (much better!)
+set bs=indent,eol,start    "</span> allow backspacing over everything <span class="k">in </span>insert mode.
+<span class="nb">set </span>autowrite              <span class="s2">" write the contents of the file, if it has been modifired, on each and command.
+set autoread               "</span> automatically <span class="nb">read </span>it again.
+<span class="nb">set </span><span class="nv">laststatus</span><span class="o">=</span>2           <span class="s2">" the value of this option influences when the last windows will have a status line.
+set ruler                  "</span> show the line and column number of the cursor position, separated by a comma.
+<span class="nb">set </span>cindent                <span class="s2">" enables automatic C program indenting. C 언어 스타일의 들여쓰기를 사용합니다.
+set autoindent             "</span> always <span class="nb">set </span>autoindenting on. 자동 들여쓰기를 사용합니다.
+<span class="nb">set </span>smartindent            <span class="s2">" do smart autoindenting when starting a new line.
+set showcmd                "</span> show <span class="o">(</span>partial<span class="o">)</span> <span class="nb">command </span><span class="k">in </span>the last line of the screen
+<span class="nb">set </span>showmatch              <span class="s2">" when a bracket is inserted, briefly jump to the matching one.
+set number                 "</span> print the line number <span class="k">in </span>front of each line. 화면에 행 번호를 표시합니다.
+<span class="nb">set </span><span class="nv">tabstop</span><span class="o">=</span>4              <span class="s2">" number of spaces that a &lt;Tab&gt; in the file counts for.
+set shiftwidth=4           "</span> numver of spaces to use <span class="k">for </span>each of <span class="o">(</span>auto<span class="o">)</span>indent.
+<span class="nb">set </span><span class="nv">softtabstop</span><span class="o">=</span>4          <span class="s2">" number of spaces that a &lt;Tab&gt; counts for while performing editing operations, like inseting a &lt;Tab&gt; or using &lt;BS&gt;.
+set expandtab              "</span> use the appropriate number of spaces to insert a &lt;Tab&gt;.
+
+<span class="s2">" ----- Vundle Setting -----
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+Plugin 'The-NERD-tree'
+Bundle 'gmarik/vundle'
+Bundle 'davidhalter/jedi-vim'
+call vundle#end()
+
+syntax enable
+syntax on
+let python_highlight_all=1
+filetype indent plugin on
+
+"</span> <span class="nt">-----</span> Color Setting <span class="nt">-----</span>
+colorscheme elflord
+
+<span class="s2">" ----- Macro Setting -----
+map &lt;F1&gt; :x!&lt;cr&gt;
+map &lt;F2&gt; :up&lt;cr&gt;
+map &lt;F3&gt; :q!&lt;cr&gt;
+map &lt;F4&gt; :up&lt;cr&gt;:!python3 %&lt;cr&gt;
+map &lt;F5&gt; :up&lt;cr&gt;:!gcc -Wall -W -O2 %&lt;cr&gt;:!./a.out&lt;cr&gt;
+"</span> <span class="nt">-Wall</span>: 모든 경고 메시지 출력
+<span class="s2">" -W: Wall에서 제외된 16가지의 경고를 출력
+"</span> <span class="nt">-O2</span>: 최적화 수행
+map &lt;F6&gt; :NERDTreeToggle&lt;cr&gt;
+</code></pre></div></div>
+
 
         
       </section>
@@ -400,16 +455,14 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#macos" class="page__taxonomy-item" rel="tag">macOS</a><span class="sep">, </span>
-    
-      <a href="/categories/#xctest" class="page__taxonomy-item" rel="tag">XCTest</a>
+      <a href="/categories/#vim" class="page__taxonomy-item" rel="tag">Vim</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-10">March 10, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-11">March 11, 2021</time></p>
 
 
       </footer>
@@ -419,23 +472,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=macOS+Command+Line+Tool+%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90+Unit+Test+%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0%20%2Fmacos%2Fxctest%2FmacOS-Command-Line-Tool-%25ED%2594%2584%25EB%25A1%259C%25EC%25A0%259D%25ED%258A%25B8%25EC%2597%2590-Unit-Test-%25EC%25B6%2594%25EA%25B0%2580%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Vim+%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95+%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0%20%2Fvim%2FVim-%25EC%2584%25A4%25EC%25A0%2595-%25EC%2584%25B8%25ED%258C%2585%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fmacos%2Fxctest%2FmacOS-Command-Line-Tool-%25ED%2594%2584%25EB%25A1%259C%25EC%25A0%259D%25ED%258A%25B8%25EC%2597%2590-Unit-Test-%25EC%25B6%2594%25EA%25B0%2580%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fvim%2FVim-%25EC%2584%25A4%25EC%25A0%2595-%25EC%2584%25B8%25ED%258C%2585%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fmacos%2Fxctest%2FmacOS-Command-Line-Tool-%25ED%2594%2584%25EB%25A1%259C%25EC%25A0%259D%25ED%258A%25B8%25EC%2597%2590-Unit-Test-%25EC%25B6%2594%25EA%25B0%2580%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fvim%2FVim-%25EC%2584%25A4%25EC%25A0%2595-%25EC%2584%25B8%25ED%258C%2585%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/" class="pagination--pager" title="macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)
+      <a href="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" class="pagination--pager" title="macOS Command Line Tool 프로젝트에 Unit Test 추가하기
 ">이전</a>
     
     
-      <a href="/vim/Vim-%EC%84%A4%EC%A0%95-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/" class="pagination--pager" title="Vim 환경설정 세팅하기
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -459,7 +511,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/vim/Vim-%EC%84%A4%EC%A0%95-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/" rel="permalink">Vim 환경설정 세팅하기
+        <a href="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" rel="permalink">macOS Command Line Tool 프로젝트에 Unit Test 추가하기
 </a>
       
     </h2>
@@ -470,7 +522,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-03-11T00:00:00+09:00">March 11, 2021</time>
+        <time datetime="2021-03-10T00:00:00+09:00">March 10, 2021</time>
       </span>
     
 
@@ -483,14 +535,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          2 분 소요
+          최대 1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Vim 환경설정 세팅하기
+    <p class="archive__item-excerpt" itemprop="description">macOS 프로젝트에서 테스트 생성하기
 </p>
   </article>
 </div>

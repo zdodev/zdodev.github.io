@@ -1,4 +1,104 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-10T11:52:04+09:00</updated><id>/feed.xml</id><title type="html">zerodotone</title><subtitle>An amazing website.</subtitle><author><name>zerodotone</name></author><entry><title type="html">macOS Command Line Tool 프로젝트에 Unit Test 추가하기</title><link href="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="macOS Command Line Tool 프로젝트에 Unit Test 추가하기" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T20:00:00+09:00</updated><id>/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0</id><content type="html" xml:base="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">&lt;h3 id=&quot;macos-프로젝트에서-테스트-생성하기&quot;&gt;macOS 프로젝트에서 테스트 생성하기&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-11T00:27:07+09:00</updated><id>/feed.xml</id><title type="html">zerodotone</title><subtitle>An amazing website.</subtitle><author><name>zerodotone</name></author><entry><title type="html">Vim 환경설정 세팅하기</title><link href="/vim/Vim-%EC%84%A4%EC%A0%95-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Vim 환경설정 세팅하기" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-11T09:19:00+09:00</updated><id>/vim/Vim-%EC%84%A4%EC%A0%95-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0</id><content type="html" xml:base="/vim/Vim-%EC%84%A4%EC%A0%95-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/">&lt;h3 id=&quot;vim-환경설정-세팅하기&quot;&gt;Vim 환경설정 세팅하기&lt;/h3&gt;
+
+&lt;p&gt;Vundle은 Vim Bundle을 줄인 말로 Vim 플러그인을 관리하는 플러그인입니다.&lt;/p&gt;
+
+&lt;p&gt;Vundle을 설치하는 방법은 다음과 같습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+vi ~/.vimrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;다음의 내용을 입력합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;rtp+&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/.vim/bundle/vundle/
+call vundle#begin&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;
+Bundle 'gmarik/Vundle.vim'
+Plugin 'The-NERD-tree'
+Bundle 'davidhalter/jedi-vim'
+call vundle#end()
+filetype plugin indent on
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;플러그인-검색&quot;&gt;플러그인 검색&lt;/h4&gt;
+
+&lt;p&gt;:PluginSearch &lt;이름&gt;&lt;/이름&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;플러그인-설치&quot;&gt;플러그인 설치&lt;/h4&gt;
+
+&lt;p&gt;:PluginInstall &lt;이름&gt; // 특정 플러그인 설치&lt;/이름&gt;&lt;/p&gt;
+
+&lt;p&gt;:BundleInstall // vimrc에 적힌 플러그인 전체 설치&lt;/p&gt;
+
+&lt;p&gt;The NERD tree 플러그인은 Finder처럼 사용할 수 있는 Vim 디렉터리 탐색기입니다.&lt;/p&gt;
+
+&lt;p&gt;받은 파일을 플러그인 디렉터리에 놓고 압축을 풀면 설치가 완료됩니다.&lt;/p&gt;
+
+&lt;p&gt;vi 입력창에서 :NERDTree 명령을 입력하면 적용됩니다.&lt;/p&gt;
+
+&lt;p&gt;:NERDTree [ start-directory | bookmark ]&lt;/p&gt;
+
+&lt;p&gt;:NERDTreeClose // NERD tree 창을 닫습니다.&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;CR&amp;gt;, o는 디렉터리를 이동하거나 파일을 엽니다.&lt;/p&gt;
+
+&lt;p&gt;t는 파일을 새로운 탭에 엽니다.&lt;/p&gt;
+
+&lt;p&gt;T는 파일을 새로운 탭의 백그라운드로 엽니다.&lt;/p&gt;
+
+&lt;p&gt;x는 현재 선택된 노드를 닫고 상위 노드로 이동합니다.&lt;/p&gt;
+
+&lt;p&gt;X는 현재 선택된 노드를 포함하여 하위 노드를 모두 닫습니다.&lt;/p&gt;
+
+&lt;p&gt;e는 선택된 노드를 새 창에서 엽니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Vim 환경설정&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;et nocompatible           &lt;span class=&quot;s2&quot;&gt;&quot; Use Vim defaults (much better!)
+set bs=indent,eol,start    &quot;&lt;/span&gt; allow backspacing over everything &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;insert mode.
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;autowrite              &lt;span class=&quot;s2&quot;&gt;&quot; write the contents of the file, if it has been modifired, on each and command.
+set autoread               &quot;&lt;/span&gt; automatically &lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;it again.
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;laststatus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2           &lt;span class=&quot;s2&quot;&gt;&quot; the value of this option influences when the last windows will have a status line.
+set ruler                  &quot;&lt;/span&gt; show the line and column number of the cursor position, separated by a comma.
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;cindent                &lt;span class=&quot;s2&quot;&gt;&quot; enables automatic C program indenting. C 언어 스타일의 들여쓰기를 사용합니다.
+set autoindent             &quot;&lt;/span&gt; always &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;autoindenting on. 자동 들여쓰기를 사용합니다.
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;smartindent            &lt;span class=&quot;s2&quot;&gt;&quot; do smart autoindenting when starting a new line.
+set showcmd                &quot;&lt;/span&gt; show &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;partial&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;the last line of the screen
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;showmatch              &lt;span class=&quot;s2&quot;&gt;&quot; when a bracket is inserted, briefly jump to the matching one.
+set number                 &quot;&lt;/span&gt; print the line number &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;front of each line. 화면에 행 번호를 표시합니다.
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tabstop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4              &lt;span class=&quot;s2&quot;&gt;&quot; number of spaces that a &amp;lt;Tab&amp;gt; in the file counts for.
+set shiftwidth=4           &quot;&lt;/span&gt; numver of spaces to use &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;each of &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;auto&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;indent.
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;softtabstop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4          &lt;span class=&quot;s2&quot;&gt;&quot; number of spaces that a &amp;lt;Tab&amp;gt; counts for while performing editing operations, like inseting a &amp;lt;Tab&amp;gt; or using &amp;lt;BS&amp;gt;.
+set expandtab              &quot;&lt;/span&gt; use the appropriate number of spaces to insert a &amp;lt;Tab&amp;gt;.
+
+&lt;span class=&quot;s2&quot;&gt;&quot; ----- Vundle Setting -----
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+Plugin 'The-NERD-tree'
+Bundle 'gmarik/vundle'
+Bundle 'davidhalter/jedi-vim'
+call vundle#end()
+
+syntax enable
+syntax on
+let python_highlight_all=1
+filetype indent plugin on
+
+&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-----&lt;/span&gt; Color Setting &lt;span class=&quot;nt&quot;&gt;-----&lt;/span&gt;
+colorscheme elflord
+
+&lt;span class=&quot;s2&quot;&gt;&quot; ----- Macro Setting -----
+map &amp;lt;F1&amp;gt; :x!&amp;lt;cr&amp;gt;
+map &amp;lt;F2&amp;gt; :up&amp;lt;cr&amp;gt;
+map &amp;lt;F3&amp;gt; :q!&amp;lt;cr&amp;gt;
+map &amp;lt;F4&amp;gt; :up&amp;lt;cr&amp;gt;:!python3 %&amp;lt;cr&amp;gt;
+map &amp;lt;F5&amp;gt; :up&amp;lt;cr&amp;gt;:!gcc -Wall -W -O2 %&amp;lt;cr&amp;gt;:!./a.out&amp;lt;cr&amp;gt;
+&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Wall&lt;/span&gt;: 모든 경고 메시지 출력
+&lt;span class=&quot;s2&quot;&gt;&quot; -W: Wall에서 제외된 16가지의 경고를 출력
+&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-O2&lt;/span&gt;: 최적화 수행
+map &amp;lt;F6&amp;gt; :NERDTreeToggle&amp;lt;cr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>zerodotone</name></author><category term="Vim" /><summary type="html">Vim 환경설정 세팅하기</summary></entry><entry><title type="html">macOS Command Line Tool 프로젝트에 Unit Test 추가하기</title><link href="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="macOS Command Line Tool 프로젝트에 Unit Test 추가하기" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T20:00:00+09:00</updated><id>/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0</id><content type="html" xml:base="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">&lt;h3 id=&quot;macos-프로젝트에서-테스트-생성하기&quot;&gt;macOS 프로젝트에서 테스트 생성하기&lt;/h3&gt;
 
 &lt;p&gt;Xcode에서 순수하게 Swift만을 다루기 위해 macOS Command Line Tool 프로젝트를 생성할 때가 종종 있는데, 이때 테스트를 포함해서 생성하는 기능이 없어서 프로젝트 생성 후 Unit Test를 추가하는 방법을 정리해보았습니다.&lt;/p&gt;
 
