@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>iOS link - zerodotone</title>
-<meta name="description" content="링크 모음">
+<!-- begin _includes/seo.html --><title>macOS Command Line Tool 프로젝트에 Unit Test 추가하기 - zerodotone</title>
+<meta name="description" content="macOS 프로젝트에서 테스트 생성하기">
 
 
   <meta name="author" content="zerodotone">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="zerodotone">
-<meta property="og:title" content="iOS link">
-<meta property="og:url" content="/ios/iOS-link/">
+<meta property="og:title" content="macOS Command Line Tool 프로젝트에 Unit Test 추가하기">
+<meta property="og:url" content="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">
 
 
-  <meta property="og:description" content="링크 모음">
-
-
-
+  <meta property="og:description" content="macOS 프로젝트에서 테스트 생성하기">
 
 
 
 
-  <meta property="article:published_time" content="2021-02-27T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-02-27T10:51:00+09:00">
+  <meta property="article:published_time" content="2021-03-10T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-03-10T20:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="/ios/iOS-link/">
+
+<link rel="canonical" href="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">
 
 
 
@@ -276,15 +276,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="iOS link">
-    <meta itemprop="description" content="링크 모음">
-    <meta itemprop="datePublished" content="2021-02-27T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-02-27T10:51:00+09:00">
+    <meta itemprop="headline" content="macOS Command Line Tool 프로젝트에 Unit Test 추가하기">
+    <meta itemprop="description" content="macOS 프로젝트에서 테스트 생성하기">
+    <meta itemprop="datePublished" content="2021-03-10T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-10T20:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">iOS link
+          <h1 id="page-title" class="page__title" itemprop="headline">macOS Command Line Tool 프로젝트에 Unit Test 추가하기
 </h1>
           
 
@@ -293,7 +293,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-02-27T00:00:00+09:00">February 27, 2021</time>
+        <time datetime="2021-03-10T00:00:00+09:00">March 10, 2021</time>
       </span>
     
 
@@ -321,15 +321,58 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#macos-프로젝트에서-테스트-생성하기">macOS 프로젝트에서 테스트 생성하기</a></li></ul>
 
             </nav>
           </aside>
         
-        <p>링크 모음</p>
+        <h3 id="macos-프로젝트에서-테스트-생성하기">macOS 프로젝트에서 테스트 생성하기</h3>
 
-<p><a href="https://theswiftdev.com/conventions-for-xcode/">Xcode 프로젝트 컨벤션</a>: Xcode 프로젝트 구성 시 네이밍 컨벤션 도움글.</p>
+<p>Xcode에서 순수하게 Swift만을 다루기 위해 macOS Command Line Tool 프로젝트를 생성할 때가 종종 있는데, 이때 테스트를 포함해서 생성하는 기능이 없어서 프로젝트 생성 후 Unit Test를 추가하는 방법을 정리해보았습니다.</p>
 
+<p>Xcode를 실행한 후 <code class="language-plaintext highlighter-rouge">Create a new Xcode project</code>를 클릭합니다.</p>
+
+<p><img src="/assets/image/2021-03-09-21-24-52-Unit-Test.png" alt="2021-03-09-21-24-52-Unit-Test" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">macOS</code> 플랫폼에서 <code class="language-plaintext highlighter-rouge">Command Line Tool</code>을 선택합니다.</p>
+
+<p><img src="/assets/image/2021-03-09-21-25-42-Unit-Test.png" alt="2021-03-09-21-25-42-Unit-Test" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Product Name</code>을 입력한 후 프로젝트를 생성합니다.</p>
+
+<p><img src="/assets/image/2021-03-09-21-25-49-Unit-Test.png" alt="2021-03-09-21-25-49-Unit-Test" /></p>
+
+<p>프로젝트 환경설정 중앙 왼쪽에 있는 <code class="language-plaintext highlighter-rouge">TARGETS</code> 탭  가장 하단의 <code class="language-plaintext highlighter-rouge">+</code> 버튼을 클릭합니다.</p>
+
+<p><img src="/assets/image/2021-03-09-21-26-09-Unit-Test.png" alt="2021-03-09-21-26-09-Unit-Test" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">macOS</code> 플랫폼에서 Unit을 검색하여 <code class="language-plaintext highlighter-rouge">Unit Testing Bundle</code> 을 선택합니다.</p>
+
+<p><img src="/assets/image/2021-03-09-21-26-23-Unit-Test.png" alt="2021-03-09-21-26-23-Unit-Test" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Product Name</code> 을 입력하고 테스트를 생성합니다.</p>
+
+<p><img src="/assets/image/2021-03-09-21-26-28-Unit-Test.png" alt="2021-03-09-21-26-28-Unit-Test" /></p>
+
+<p>화면 상단의 터미널 아이콘이 있는 <code class="language-plaintext highlighter-rouge">MyApp</code> 을 클릭합니다. (아까 클릭한 TARGETS 탭에서 최상단으로 바로 올라가면 됩니다.) 클릭 후 <code class="language-plaintext highlighter-rouge">Edit Scheme</code> 을 클릭합니다.</p>
+
+<p><img src="/assets/image/2021-03-09-21-26-50-Unit-Test.png" alt="2021-03-09-21-26-50-Unit-Test" /></p>
+
+<p>Test 탭에서 하단의 <code class="language-plaintext highlighter-rouge">+</code> 버튼을 클릭합니다.</p>
+
+<p><img src="/assets/image/2021-03-09 at 9.26.56 PM-Unit-Test.png" alt="2021-03-09 at 9.26.56 PM-Unit-Test" /></p>
+
+<p>이전에 생성한 Test를 선택하고 <code class="language-plaintext highlighter-rouge">Add</code> 를 클릭합니다.</p>
+
+<p><img src="/assets/image/2021-03-09 at 9.27.00 PM-Unit-Test.png" alt="2021-03-09 at 9.27.00 PM-Unit-Test" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">main.swift</code> 에서 테스트할 코드를 작성하고 오른쪽 <code class="language-plaintext highlighter-rouge">Target Membership</code> 탭에서 <code class="language-plaintext highlighter-rouge">Tests</code>(생성한 테스트이름) 체크박스를 선택합니다.</p>
+
+<p><img src="/assets/image/2021-03-09 at 9.29.19 PM-Unit-Test.png" alt="2021-03-09 at 9.29.19 PM-Unit-Test" /></p>
+
+<p>테스트 코드를 작성하고 테스트를 수행하면 정상적으로 테스트가 수행되는 것을 확인할 수 있습니다.😎</p>
+
+<p><img src="/assets/image/2021-03-09 at 9.29.59 PM-Unit-Test.png" alt="2021-03-09 at 9.29.59 PM-Unit-Test" /></p>
 
         
       </section>
@@ -348,14 +391,16 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#ios" class="page__taxonomy-item" rel="tag">iOS</a>
+      <a href="/categories/#macos" class="page__taxonomy-item" rel="tag">macOS</a><span class="sep">, </span>
+    
+      <a href="/categories/#xctest" class="page__taxonomy-item" rel="tag">XCTest</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-02-27">February 27, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-10">March 10, 2021</time></p>
 
 
       </footer>
@@ -365,23 +410,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=iOS+link%20%2Fios%2FiOS-link%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=macOS+Command+Line+Tool+%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90+Unit+Test+%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0%20%2Fmacos%2Fxctest%2FmacOS-Command-Line-Tool-%25ED%2594%2584%25EB%25A1%259C%25EC%25A0%259D%25ED%258A%25B8%25EC%2597%2590-Unit-Test-%25EC%25B6%2594%25EA%25B0%2580%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fios%2FiOS-link%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fmacos%2Fxctest%2FmacOS-Command-Line-Tool-%25ED%2594%2584%25EB%25A1%259C%25EC%25A0%259D%25ED%258A%25B8%25EC%2597%2590-Unit-Test-%25EC%25B6%2594%25EA%25B0%2580%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fios%2FiOS-link%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fmacos%2Fxctest%2FmacOS-Command-Line-Tool-%25ED%2594%2584%25EB%25A1%259C%25EC%25A0%259D%25ED%258A%25B8%25EC%2597%2590-Unit-Test-%25EC%25B6%2594%25EA%25B0%2580%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/etc/first-post/" class="pagination--pager" title="first post
+      <a href="/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/" class="pagination--pager" title="macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)
 ">이전</a>
     
     
-      <a href="/uml/swift/UML-Class-Diagram/" class="pagination--pager" title="UML Class Diagram
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -395,52 +439,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" rel="permalink">macOS Command Line Tool 프로젝트에 Unit Test 추가하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-03-10T00:00:00+09:00">March 10, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">macOS 프로젝트에서 테스트 생성하기
-</p>
-  </article>
-</div>
-
         
           
 
@@ -575,6 +573,52 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">키보드 누르고 있을 때 반복 입력하도록 수정
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/uml/swift/UML-Class-Diagram/" rel="permalink">UML Class Diagram
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-03-03T00:00:00+09:00">March 3, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Class Diagram, 클래스 다이어그램
 </p>
   </article>
 </div>

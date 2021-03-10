@@ -1,4 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-09T20:21:29+09:00</updated><id>/feed.xml</id><title type="html">zerodotone</title><subtitle>An amazing website.</subtitle><author><name>zerodotone</name></author><entry><title type="html">macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)</title><link href="/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)" /><published>2021-03-09T00:00:00+09:00</published><updated>2021-03-10T04:50:00+09:00</updated><id>/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/">&lt;h2 id=&quot;xcrun-error-invalid-active-developer-path-에러-해결하기&quot;&gt;xcrun: error: invalid active developer path 에러 해결하기&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-10T11:22:17+09:00</updated><id>/feed.xml</id><title type="html">zerodotone</title><subtitle>An amazing website.</subtitle><author><name>zerodotone</name></author><entry><title type="html">macOS Command Line Tool 프로젝트에 Unit Test 추가하기</title><link href="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="macOS Command Line Tool 프로젝트에 Unit Test 추가하기" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T20:00:00+09:00</updated><id>/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0</id><content type="html" xml:base="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/">&lt;h3 id=&quot;macos-프로젝트에서-테스트-생성하기&quot;&gt;macOS 프로젝트에서 테스트 생성하기&lt;/h3&gt;
+
+&lt;p&gt;Xcode에서 순수하게 Swift만을 다루기 위해 macOS Command Line Tool 프로젝트를 생성할 때가 종종 있는데, 이때 테스트를 포함해서 생성하는 기능이 없어서 프로젝트 생성 후 Unit Test를 추가하는 방법을 정리해보았습니다.&lt;/p&gt;
+
+&lt;p&gt;Xcode를 실행한 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Create a new Xcode project&lt;/code&gt;를 클릭합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09-21-24-52-Unit-Test.png&quot; alt=&quot;2021-03-09-21-24-52-Unit-Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;macOS&lt;/code&gt; 플랫폼에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Command Line Tool&lt;/code&gt;을 선택합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09-21-25-42-Unit-Test.png&quot; alt=&quot;2021-03-09-21-25-42-Unit-Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Product Name&lt;/code&gt;을 입력한 후 프로젝트를 생성합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09-21-25-49-Unit-Test.png&quot; alt=&quot;2021-03-09-21-25-49-Unit-Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;프로젝트 환경설정 중앙 왼쪽에 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TARGETS&lt;/code&gt; 탭  가장 하단의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; 버튼을 클릭합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09-21-26-09-Unit-Test.png&quot; alt=&quot;2021-03-09-21-26-09-Unit-Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;macOS&lt;/code&gt; 플랫폼에서 Unit을 검색하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Unit Testing Bundle&lt;/code&gt; 을 선택합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09-21-26-23-Unit-Test.png&quot; alt=&quot;2021-03-09-21-26-23-Unit-Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Product Name&lt;/code&gt; 을 입력하고 테스트를 생성합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09-21-26-28-Unit-Test.png&quot; alt=&quot;2021-03-09-21-26-28-Unit-Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;화면 상단의 터미널 아이콘이 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MyApp&lt;/code&gt; 을 클릭합니다. (아까 클릭한 TARGETS 탭에서 최상단으로 바로 올라가면 됩니다.) 클릭 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Edit Scheme&lt;/code&gt; 을 클릭합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09-21-26-50-Unit-Test.png&quot; alt=&quot;2021-03-09-21-26-50-Unit-Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Test 탭에서 하단의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; 버튼을 클릭합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09 at 9.26.56 PM-Unit-Test.png&quot; alt=&quot;2021-03-09 at 9.26.56 PM-Unit-Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이전에 생성한 Test를 선택하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add&lt;/code&gt; 를 클릭합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09 at 9.27.00 PM-Unit-Test.png&quot; alt=&quot;2021-03-09 at 9.27.00 PM-Unit-Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.swift&lt;/code&gt; 에서 테스트할 코드를 작성하고 오른쪽 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Target Membership&lt;/code&gt; 탭에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tests&lt;/code&gt;(생성한 테스트이름) 체크박스를 선택합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09 at 9.29.19 PM-Unit-Test.png&quot; alt=&quot;2021-03-09 at 9.29.19 PM-Unit-Test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;테스트 코드를 작성하고 테스트를 수행하면 정상적으로 테스트가 수행되는 것을 확인할 수 있습니다.😎&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-09 at 9.29.59 PM-Unit-Test.png&quot; alt=&quot;2021-03-09 at 9.29.59 PM-Unit-Test&quot; /&gt;&lt;/p&gt;</content><author><name>zerodotone</name></author><category term="macOS" /><category term="XCTest" /><summary type="html">macOS 프로젝트에서 테스트 생성하기</summary></entry><entry><title type="html">macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)</title><link href="/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)" /><published>2021-03-09T00:00:00+09:00</published><updated>2021-03-10T04:50:00+09:00</updated><id>/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/">&lt;h2 id=&quot;xcrun-error-invalid-active-developer-path-에러-해결하기&quot;&gt;xcrun: error: invalid active developer path 에러 해결하기&lt;/h2&gt;
 
 &lt;p&gt;macOS 업데이트 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xcrun: error: invalid active developer path&lt;/code&gt; 관련 에러가 출력될 때가 있습니다. 특히 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Big Sur&lt;/code&gt; 업데이트 이후 계속 발생하여 해결방법을 정리해보았습니다.&lt;/p&gt;
 
@@ -124,9 +170,18 @@ open Package.swift
 
 &lt;p&gt;클래스간에는 다양한 관계가 있을 수 있으며 표현 방식도 다양합니다.&lt;/p&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;Association&lt;/li&gt;
+  &lt;li&gt;Inheritance, Generalization&lt;/li&gt;
+  &lt;li&gt;Implementation, Realization&lt;/li&gt;
+  &lt;li&gt;Dependency&lt;/li&gt;
+  &lt;li&gt;Aggregation&lt;/li&gt;
+  &lt;li&gt;Composition&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&quot;association-연관-관계&quot;&gt;Association, 연관 관계&lt;/h3&gt;
 
-&lt;p&gt;다른 객체의 참조를 가지는 인스턴스 변수를 가지고 있을 때 두 클래스는 연관 관계라고 한다. 아래 그램은 Phone 클래스가 Button 클래스를 참조하는 연관 관계를 보여줍니다.&lt;/p&gt;
+&lt;p&gt;다른 객체의 참조를 가지는 인스턴스 변수를 가지고 있을 때 두 클래스는 연관 관계라고 합니다. 아래 그램은 Phone 클래스가 Button 클래스를 참조하는 연관 관계를 보여줍니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-03-5-06-02-association.png&quot; alt=&quot;2021-03-03-5-06-02-association&quot; /&gt;&lt;/p&gt;
 
@@ -134,11 +189,98 @@ open Package.swift
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Phone&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   	&lt;span class=&quot;c1&quot;&gt;// buttons 프로퍼티의 타입이 Button 클래스&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Button&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Button&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;inheritance-generalization-상속-관계-일반화-관계&quot;&gt;Inheritance, Generalization, 상속 관계, 일반화 관계&lt;/h3&gt;
+
+&lt;p&gt;객체지향 개념에서 상속을 나타내는 관계입니다. 한 클래스가 다른 클래스를 포함하는 상위 개념일 때 이를 일반화 관계라고 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Employee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SalariedEmployee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Employee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;implementation-realization-구현-관계-실체화-관계&quot;&gt;Implementation, Realization, 구현 관계, 실체화 관계&lt;/h3&gt;
+
+&lt;p&gt;객체지향 개념에서 (인터페이스) 구현을 나타내는 관계입니다. 한 클래스가 인터페이스를 구현할 경우 이를 실체화 관계라고 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ButtonListener&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ButtonListenerAdapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ButtonListener&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;dependency-의존-관계&quot;&gt;Dependency, 의존 관계&lt;/h3&gt;
+
+&lt;p&gt;한 클래스가 다른 클래스를 참조하는 관계입니다. 한 클래스의 내부 프로퍼티에 저장하지 않고 사용하는 관계를 의존 관계라고 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Schedule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;User&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;createSchedule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Schedule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;Schedule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;useSchedule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;schedule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Schedule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;schedule&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;aggregation-집합-관계&quot;&gt;Aggregation, 집합 관계&lt;/h3&gt;
+
+&lt;p&gt;클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 내부 프로퍼티로 가지고 있지만 라이프 타임이 독립적인 관계를 집합 관계라고 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Part&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Whole&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Part&lt;/span&gt;
+
+    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Part&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;part&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;part&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;composition-합성-관계&quot;&gt;Composition, 합성 관계&lt;/h3&gt;
+
+&lt;p&gt;클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 직접 생성하고 내부 프로퍼티에 할당하여 가지고 있어 라이프 타임이 종속적인 관계를 합성 관계라고 합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Ward&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Owner&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Ward&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Ward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>zerodotone</name></author><category term="UML" /><category term="Swift" /><summary type="html">Class Diagram, 클래스 다이어그램</summary></entry><entry><title type="html">iOS link</title><link href="/ios/iOS-link/" rel="alternate" type="text/html" title="iOS link" /><published>2021-02-27T00:00:00+09:00</published><updated>2021-02-27T10:51:00+09:00</updated><id>/ios/iOS-link</id><content type="html" xml:base="/ios/iOS-link/">&lt;p&gt;링크 모음&lt;/p&gt;
 
