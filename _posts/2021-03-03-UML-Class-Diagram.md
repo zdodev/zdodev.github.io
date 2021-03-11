@@ -1,5 +1,5 @@
 ---
-title: "UML Class Diagram"
+title: "UML Class Diagram with Swift"
 categories: 
   - UML
   - Swift
@@ -37,9 +37,9 @@ Class Diagram, 클래스 다이어그램
 
 ### Association, 연관 관계
 
-다른 객체의 참조를 가지는 인스턴스 변수를 가지고 있을 때 두 클래스는 연관 관계라고 합니다. 아래 그램은 Phone 클래스가 Button 클래스를 참조하는 연관 관계를 보여줍니다.
+다른 객체의 참조를 가지는 인스턴스 변수를 가지고 있을 때 두 클래스는 연관 관계라고 합니다. 아래 그림은 Phone 클래스가 Button 클래스를 참조하는 연관 관계를 보여줍니다.
 
-![2021-03-03-5-06-02-association](/assets/image/2021-03-03-5-06-02-association.png)
+![2021-03-11 at 11.14.20 PM-association](/assets/image/2021-03-11 at 11.14.20 PM-association.png)
 
 연관 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.
 
@@ -58,7 +58,11 @@ class Button {
 
 ### Inheritance, Generalization, 상속 관계, 일반화 관계
 
-객체지향 개념에서 상속을 나타내는 관계입니다. 한 클래스가 다른 클래스를 포함하는 상위 개념일 때 이를 일반화 관계라고 합니다.
+객체지향 개념에서 상속을 나타내는 관계입니다. 한 클래스가 다른 클래스를 포함하는 상위 개념일 때 이를 일반화 관계라고 합니다. 아래 그림은 SalariedEmployee 클래스가 Employee 클래스를 상속하는 관계를 보여줍니다.
+
+![2021-03-11 at 11.11.32 PM-Inheritance](/assets/image/2021-03-11 at 11.11.32 PM-Inheritance.png)
+
+상속 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.
 
 ```swift
 class Employee {
@@ -74,7 +78,11 @@ class SalariedEmployee: Employee {
 
 ### Implementation, Realization, 구현 관계, 실체화 관계
 
-객체지향 개념에서 (인터페이스) 구현을 나타내는 관계입니다. 한 클래스가 인터페이스를 구현할 경우 이를 실체화 관계라고 합니다.
+객체지향 개념에서 (인터페이스) 구현을 나타내는 관계입니다. 한 클래스가 인터페이스를 구현할 경우 이를 실체화 관계라고 합니다. 아래 그림은 ButtonListenerAdapter 클래스가 ButtonListener 프로토콜을 구현하는 관계를 보여줍니다.
+
+![2021-03-11 at 11.20.38 PM-Implementation](/assets/image/2021-03-11 at 11.20.38 PM-Implementation.png)
+
+구현 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.
 
 ```swift
 protocol ButtonListener {
@@ -90,7 +98,11 @@ class ButtonListenerAdapter: ButtonListener {
 
 ### Dependency, 의존 관계
 
-한 클래스가 다른 클래스를 참조하는 관계입니다. 한 클래스의 내부 프로퍼티에 저장하지 않고 사용하는 관계를 의존 관계라고 합니다.
+한 클래스가 다른 클래스를 참조하는 관계입니다. 한 클래스의 내부 프로퍼티에 저장하지 않고 사용하는 관계를 의존 관계라고 합니다. 아래 그림은 User 클래스가 Scheduel 클래스를 의존하는 관계를 보여줍니다.
+
+![2021-03-11 at 11.23.54 PM-Dependency](/assets/image/2021-03-11 at 11.23.54 PM-Dependency.png)
+
+의존 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.
 
 ```swift
 class Schedule {
@@ -114,7 +126,11 @@ class User {
 
 ### Aggregation, 집합 관계
 
-클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 내부 프로퍼티로 가지고 있지만 라이프 타임이 독립적인 관계를 집합 관계라고 합니다.
+클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 내부 프로퍼티로 가지고 있지만 라이프 타임이 독립적인 관계를 집합 관계라고 합니다. 아래 그림은 Whole 클래스와 Part 클래스의 집합 관계를 보여줍니다.
+
+![2021-03-11 at 11.26.46 PM-Aggregation](/assets/image/2021-03-11 at 11.26.46 PM-Aggregation.png)
+
+집합 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.
 
 ```swift
 class Part {
@@ -123,7 +139,7 @@ class Part {
 
 class Whole {
     let part: Part
-
+		// 외부에서 Part를 받아옵니다. Whole 클래스가 deinit이 되어도 Part는 deinit 되지 않습니다.
     init(part: Part) {
         self.part = part
     }
@@ -134,7 +150,11 @@ class Whole {
 
 ### Composition, 합성 관계
 
-클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 직접 생성하고 내부 프로퍼티에 할당하여 가지고 있어 라이프 타임이 종속적인 관계를 합성 관계라고 합니다.
+클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 직접 생성하고 내부 프로퍼티에 할당하여 가지고 있어 라이프 타임이 종속적인 관계를 합성 관계라고 합니다. 아래 그림은 Ward 클래스와 Owner 클래스가 합성 관계에 있는 것을 보여줍니다.
+
+![2021-03-11 at 11.27.49 PM-Composition](/assets/image/2021-03-11 at 11.27.49 PM-Composition.png)
+
+합성 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.
 
 ```swift
 class Ward {

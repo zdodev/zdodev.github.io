@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-11T00:39:12+09:00</updated><id>/feed.xml</id><title type="html">zerodotone</title><subtitle>An amazing website.</subtitle><author><name>zerodotone</name></author><entry><title type="html">Swift에서 커맨드라인으로 입력받고 조작하기</title><link href="/swift/Swift%EC%97%90%EC%84%9C-%EC%BB%A4%EB%A7%A8%EB%93%9C%EB%9D%BC%EC%9D%B8-%EC%9E%85%EB%A0%A5%EB%B0%9B%EA%B3%A0-%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Swift에서 커맨드라인으로 입력받고 조작하기" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-11T09:35:00+09:00</updated><id>/swift/Swift%EC%97%90%EC%84%9C-%EC%BB%A4%EB%A7%A8%EB%93%9C%EB%9D%BC%EC%9D%B8-%EC%9E%85%EB%A0%A5%EB%B0%9B%EA%B3%A0-%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B0</id><content type="html" xml:base="/swift/Swift%EC%97%90%EC%84%9C-%EC%BB%A4%EB%A7%A8%EB%93%9C%EB%9D%BC%EC%9D%B8-%EC%9E%85%EB%A0%A5%EB%B0%9B%EA%B3%A0-%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B0/">&lt;h3 id=&quot;swift에서-키보드-커맨드라인표준입력으로-입력받는-방법&quot;&gt;Swift에서 키보드, 커맨드라인(표준입력)으로 입력받는 방법&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-11T23:31:53+09:00</updated><id>/feed.xml</id><title type="html">zerodotone</title><subtitle>An amazing website.</subtitle><author><name>zerodotone</name></author><entry><title type="html">Swift에서 커맨드라인으로 입력받고 조작하기</title><link href="/swift/Swift%EC%97%90%EC%84%9C-%EC%BB%A4%EB%A7%A8%EB%93%9C%EB%9D%BC%EC%9D%B8-%EC%9E%85%EB%A0%A5%EB%B0%9B%EA%B3%A0-%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Swift에서 커맨드라인으로 입력받고 조작하기" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-11T09:35:00+09:00</updated><id>/swift/Swift%EC%97%90%EC%84%9C-%EC%BB%A4%EB%A7%A8%EB%93%9C%EB%9D%BC%EC%9D%B8-%EC%9E%85%EB%A0%A5%EB%B0%9B%EA%B3%A0-%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B0</id><content type="html" xml:base="/swift/Swift%EC%97%90%EC%84%9C-%EC%BB%A4%EB%A7%A8%EB%93%9C%EB%9D%BC%EC%9D%B8-%EC%9E%85%EB%A0%A5%EB%B0%9B%EA%B3%A0-%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B0/">&lt;h3 id=&quot;swift에서-키보드-커맨드라인표준입력으로-입력받는-방법&quot;&gt;Swift에서 키보드, 커맨드라인(표준입력)으로 입력받는 방법&lt;/h3&gt;
 
 &lt;p&gt;Swift에서는 표준입력 받는 함수를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;readLine(strippingNewline:)&lt;/code&gt;으로 정의하고 있습니다. readLine() 함수는 다음과 같이 정의되었습니다.&lt;/p&gt;
 
@@ -294,7 +294,7 @@ open Package.swift
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add period with double-space&lt;/code&gt; 메뉴의 체크박스를 해제하면 된다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-08-10-43-03-keyboard.png&quot; alt=&quot;2021-03-08-10-43-03-keyboard&quot; /&gt;&lt;/p&gt;</content><author><name>zerodotone</name></author><category term="macOS" /><category term="Preferences" /><summary type="html">키보드 누르고 있을 때 반복 입력하도록 수정</summary></entry><entry><title type="html">UML Class Diagram</title><link href="/uml/swift/UML-Class-Diagram/" rel="alternate" type="text/html" title="UML Class Diagram" /><published>2021-03-03T00:00:00+09:00</published><updated>2021-03-04T01:29:00+09:00</updated><id>/uml/swift/UML-Class-Diagram</id><content type="html" xml:base="/uml/swift/UML-Class-Diagram/">&lt;p&gt;Class Diagram, 클래스 다이어그램&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-08-10-43-03-keyboard.png&quot; alt=&quot;2021-03-08-10-43-03-keyboard&quot; /&gt;&lt;/p&gt;</content><author><name>zerodotone</name></author><category term="macOS" /><category term="Preferences" /><summary type="html">키보드 누르고 있을 때 반복 입력하도록 수정</summary></entry><entry><title type="html">UML Class Diagram with Swift</title><link href="/uml/swift/UML-Class-Diagram/" rel="alternate" type="text/html" title="UML Class Diagram with Swift" /><published>2021-03-03T00:00:00+09:00</published><updated>2021-03-04T01:29:00+09:00</updated><id>/uml/swift/UML-Class-Diagram</id><content type="html" xml:base="/uml/swift/UML-Class-Diagram/">&lt;p&gt;Class Diagram, 클래스 다이어그램&lt;/p&gt;
 
 &lt;p&gt;클래스 다이어그램은 클래스 내부의 정적인 내용이나 클래스 사이의 관계를 표현할 수 있는 다이어그램이다. 클래스 내부의 변수, 메서드를 표현하고 각 클래스간의 관계(상속, 참조 등)을 나타낼 수 있다. 한 마디로 소스코드에 나타난 타입간의 의존 관계를 모두 나타낸다.&lt;/p&gt;
 
@@ -326,9 +326,9 @@ open Package.swift
 
 &lt;h3 id=&quot;association-연관-관계&quot;&gt;Association, 연관 관계&lt;/h3&gt;
 
-&lt;p&gt;다른 객체의 참조를 가지는 인스턴스 변수를 가지고 있을 때 두 클래스는 연관 관계라고 합니다. 아래 그램은 Phone 클래스가 Button 클래스를 참조하는 연관 관계를 보여줍니다.&lt;/p&gt;
+&lt;p&gt;다른 객체의 참조를 가지는 인스턴스 변수를 가지고 있을 때 두 클래스는 연관 관계라고 합니다. 아래 그림은 Phone 클래스가 Button 클래스를 참조하는 연관 관계를 보여줍니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-03-5-06-02-association.png&quot; alt=&quot;2021-03-03-5-06-02-association&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-11 at 11.14.20 PM-association.png&quot; alt=&quot;2021-03-11 at 11.14.20 PM-association&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;연관 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.&lt;/p&gt;
 
@@ -346,7 +346,11 @@ open Package.swift
 
 &lt;h3 id=&quot;inheritance-generalization-상속-관계-일반화-관계&quot;&gt;Inheritance, Generalization, 상속 관계, 일반화 관계&lt;/h3&gt;
 
-&lt;p&gt;객체지향 개념에서 상속을 나타내는 관계입니다. 한 클래스가 다른 클래스를 포함하는 상위 개념일 때 이를 일반화 관계라고 합니다.&lt;/p&gt;
+&lt;p&gt;객체지향 개념에서 상속을 나타내는 관계입니다. 한 클래스가 다른 클래스를 포함하는 상위 개념일 때 이를 일반화 관계라고 합니다. 아래 그림은 SalariedEmployee 클래스가 Employee 클래스를 상속하는 관계를 보여줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-11 at 11.11.32 PM-Inheritance.png&quot; alt=&quot;2021-03-11 at 11.11.32 PM-Inheritance&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;상속 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Employee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   
@@ -361,7 +365,11 @@ open Package.swift
 
 &lt;h3 id=&quot;implementation-realization-구현-관계-실체화-관계&quot;&gt;Implementation, Realization, 구현 관계, 실체화 관계&lt;/h3&gt;
 
-&lt;p&gt;객체지향 개념에서 (인터페이스) 구현을 나타내는 관계입니다. 한 클래스가 인터페이스를 구현할 경우 이를 실체화 관계라고 합니다.&lt;/p&gt;
+&lt;p&gt;객체지향 개념에서 (인터페이스) 구현을 나타내는 관계입니다. 한 클래스가 인터페이스를 구현할 경우 이를 실체화 관계라고 합니다. 아래 그림은 ButtonListenerAdapter 클래스가 ButtonListener 프로토콜을 구현하는 관계를 보여줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-11 at 11.20.38 PM-Implementation.png&quot; alt=&quot;2021-03-11 at 11.20.38 PM-Implementation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;구현 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ButtonListener&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   
@@ -376,7 +384,11 @@ open Package.swift
 
 &lt;h3 id=&quot;dependency-의존-관계&quot;&gt;Dependency, 의존 관계&lt;/h3&gt;
 
-&lt;p&gt;한 클래스가 다른 클래스를 참조하는 관계입니다. 한 클래스의 내부 프로퍼티에 저장하지 않고 사용하는 관계를 의존 관계라고 합니다.&lt;/p&gt;
+&lt;p&gt;한 클래스가 다른 클래스를 참조하는 관계입니다. 한 클래스의 내부 프로퍼티에 저장하지 않고 사용하는 관계를 의존 관계라고 합니다. 아래 그림은 User 클래스가 Scheduel 클래스를 의존하는 관계를 보여줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-11 at 11.23.54 PM-Dependency.png&quot; alt=&quot;2021-03-11 at 11.23.54 PM-Dependency&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;의존 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Schedule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -399,7 +411,11 @@ open Package.swift
 
 &lt;h3 id=&quot;aggregation-집합-관계&quot;&gt;Aggregation, 집합 관계&lt;/h3&gt;
 
-&lt;p&gt;클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 내부 프로퍼티로 가지고 있지만 라이프 타임이 독립적인 관계를 집합 관계라고 합니다.&lt;/p&gt;
+&lt;p&gt;클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 내부 프로퍼티로 가지고 있지만 라이프 타임이 독립적인 관계를 집합 관계라고 합니다. 아래 그림은 Whole 클래스와 Part 클래스의 집합 관계를 보여줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-11 at 11.26.46 PM-Aggregation.png&quot; alt=&quot;2021-03-11 at 11.26.46 PM-Aggregation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;집합 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Part&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   
@@ -407,7 +423,7 @@ open Package.swift
 
 &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Whole&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Part&lt;/span&gt;
-
+		&lt;span class=&quot;c1&quot;&gt;// 외부에서 Part를 받아옵니다. Whole 클래스가 deinit이 되어도 Part는 deinit 되지 않습니다.&lt;/span&gt;
     &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Part&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;part&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;part&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -418,7 +434,11 @@ open Package.swift
 
 &lt;h3 id=&quot;composition-합성-관계&quot;&gt;Composition, 합성 관계&lt;/h3&gt;
 
-&lt;p&gt;클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 직접 생성하고 내부 프로퍼티에 할당하여 가지고 있어 라이프 타임이 종속적인 관계를 합성 관계라고 합니다.&lt;/p&gt;
+&lt;p&gt;클래스 사이에서 전체 또는 부분 같은 관계를 나타냅니다. 한 클래스가 다른 클래스를 직접 생성하고 내부 프로퍼티에 할당하여 가지고 있어 라이프 타임이 종속적인 관계를 합성 관계라고 합니다. 아래 그림은 Ward 클래스와 Owner 클래스가 합성 관계에 있는 것을 보여줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-11 at 11.27.49 PM-Composition.png&quot; alt=&quot;2021-03-11 at 11.27.49 PM-Composition&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;합성 관계를 소스코드로 다음과 같이 표현해 볼 수 있습니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Ward&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   
