@@ -52,4 +52,10 @@ var store = [{
         "tags": [],
         "url": "/vim/Vim-%EC%84%A4%EC%A0%95-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/",
         "teaser": null
+      },{
+        "title": "UML 작성하기 (feat. PlantUML)",
+        "excerpt":"UML 작성하기   프로젝트를 시작하기 전에나 기존의 코드들 구성을 가시적으로 보고 싶어서 여러 방법을 고민하다가 UML을 작성해보기로 했습니다.   막상 UML 작성 도구들을 찾아보니 많은 도구가 나와 있고 도구별로 UML 지원 버전이나 편의성도 아주 달랐습니다. 데스크톱 앱 기반도 있고 웹앱 기반도 많이 있었습니다. 이런저런 고민을 하다가 텍스트 스크립트 기반의 UML 도구를 선택했습니다. 다른 도구들과 다르게 스크립트 배우고 작성해야 하는 어려움은 있지만, 텍스트 기반이므로 git을 통해 공유 및 편집을 통한 협업을 자유롭게 할 수 있습니다. 그중에서도 PlantUML 은 오픈소스 UML 작성 도구로 라이선스 걱정도 없습니다.   여기에서는 Visual Studio Code를 통해 UML을 작성해보았습니다.      Visual Studio Code의 Extension 탭에서 PlantUML 을 검색하여 설치합니다.         여러 가지 다이어그램을 그리기 위해서 GraphViz 를 설치해야 합니다. macOS에서 homebrew를 통해 쉽게 설치할 수 있습니다.   brew install graphviz   설치를 다 하고 나서 Visual Studio Code에서 다음과 같이 PlantUML 스크립트를 작성합니다.   @startuml  scale 2 class Event {     +startTime: DateTime     +venue: string     +registrationClosed: boolean     -notifyAttendes() }  class ApplicationUser {     -username: string     -password: string     +isLocked: boolean     -suggestRandomPassword()     +changeProfilePic() }  class Speaker {     +openForSpeaking: boolean     -callForAction()     +applyAsSpokePerson() }  class Topic {     +title: string     +sourcesCodeUrl: string     +downloadMaterials() }  class Attendee {     -eventAttended: number     -suggestEventBasedOnPreference()     +registerForTicket() }  ApplicationUser &lt;|-- Speaker ApplicationUser &lt;|-- Attendee Speaker \"1\" *-- \"*\" Topic Event \"1\" o-- \"*\" Speaker Event \"1\" o-- \"*\" Attendee  @enduml   스크립트 작성 후 shift + command + p를 누르고 PlantUML: Preview Current Diagram을 입력하고 선택합니다. 그러면 다음 화면과 같이 UML을 확인할 수 있습니다.        참고 URL      Visual Studio Code: https://code.visualstudio.com   PlantUML: https://plantuml.com/ko/   Graphviz: https://graphviz.org  ","categories": ["UML"],
+        "tags": [],
+        "url": "/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/",
+        "teaser": null
       }]

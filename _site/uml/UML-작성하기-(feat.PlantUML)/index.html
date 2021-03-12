@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>macOS 업데이트 후 개발도구 에러 해결하기(xcrun error) - zerodotone</title>
-<meta name="description" content="xcrun: error: invalid active developer path 에러 해결하기">
+<!-- begin _includes/seo.html --><title>UML 작성하기 (feat. PlantUML) - zerodotone</title>
+<meta name="description" content="UML 작성하기">
 
 
   <meta name="author" content="zerodotone">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="zerodotone">
-<meta property="og:title" content="macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)">
-<meta property="og:url" content="/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/">
+<meta property="og:title" content="UML 작성하기 (feat. PlantUML)">
+<meta property="og:url" content="/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/">
 
 
-  <meta property="og:description" content="xcrun: error: invalid active developer path 에러 해결하기">
-
-
-
+  <meta property="og:description" content="UML 작성하기">
 
 
 
 
-  <meta property="article:published_time" content="2021-03-09T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-03-10T04:50:00+09:00">
+  <meta property="article:published_time" content="2021-03-12T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-03-13T08:04:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/">
+
+<link rel="canonical" href="/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/">
 
 
 
@@ -285,15 +285,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)">
-    <meta itemprop="description" content="xcrun: error: invalid active developer path 에러 해결하기">
-    <meta itemprop="datePublished" content="2021-03-09T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-03-10T04:50:00+09:00">
+    <meta itemprop="headline" content="UML 작성하기 (feat. PlantUML)">
+    <meta itemprop="description" content="UML 작성하기">
+    <meta itemprop="datePublished" content="2021-03-12T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-13T08:04:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)
+          <h1 id="page-title" class="page__title" itemprop="headline">UML 작성하기 (feat. PlantUML)
 </h1>
           
 
@@ -302,7 +302,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-03-09T00:00:00+09:00">March 9, 2021</time>
+        <time datetime="2021-03-12T00:00:00+09:00">March 12, 2021</time>
       </span>
     
 
@@ -315,7 +315,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -330,22 +330,92 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#xcrun-error-invalid-active-developer-path-에러-해결하기">xcrun: error: invalid active developer path 에러 해결하기</a></li></ul>
+              <ul class="toc__menu"><li><a href="#uml-작성하기">UML 작성하기</a></li><li><a href="#참고-url">참고 URL</a></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="xcrun-error-invalid-active-developer-path-에러-해결하기">xcrun: error: invalid active developer path 에러 해결하기</h2>
+        <h3 id="uml-작성하기">UML 작성하기</h3>
 
-<p>macOS 업데이트 후 <code class="language-plaintext highlighter-rouge">xcrun: error: invalid active developer path</code> 관련 에러가 출력될 때가 있습니다. 특히 <code class="language-plaintext highlighter-rouge">Big Sur</code> 업데이트 이후 계속 발생하여 해결방법을 정리해보았습니다.</p>
+<p>프로젝트를 시작하기 전에나 기존의 코드들 구성을 가시적으로 보고 싶어서 여러 방법을 고민하다가 UML을 작성해보기로 했습니다.</p>
 
-<p><img src="/assets/image/2021-03-09-19-50037-xcrun.png" alt="2021-03-09-19-50037-xcrun" /></p>
+<p>막상 UML 작성 도구들을 찾아보니 많은 도구가 나와 있고 도구별로 UML 지원 버전이나 편의성도 아주 달랐습니다. 데스크톱 앱 기반도 있고 웹앱 기반도 많이 있었습니다. 이런저런 고민을 하다가 텍스트 스크립트 기반의 UML 도구를 선택했습니다. 다른 도구들과 다르게 스크립트 배우고 작성해야 하는 어려움은 있지만, 텍스트 기반이므로 git을 통해 공유 및 편집을 통한 협업을 자유롭게 할 수 있습니다. 그중에서도 <code class="language-plaintext highlighter-rouge">PlantUML</code> 은 오픈소스 UML 작성 도구로 라이선스 걱정도 없습니다.</p>
 
-<p>다음 명령어를 실행하여 <code class="language-plaintext highlighter-rouge">command line developer tools</code>를 재설치하면 문제가 해결됩니다.</p>
+<p>여기에서는 Visual Studio Code를 통해 UML을 작성해보았습니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select <span class="nt">--install</span>
+<ul>
+  <li>Visual Studio Code의 Extension 탭에서 <code class="language-plaintext highlighter-rouge">PlantUML</code> 을 검색하여 설치합니다.</li>
+</ul>
+
+<p><img src="/assets/image/2021-03-12 at 10.00.00 PM-plantuml.png" alt="2021-03-12 at 10.00.00 PM-plantuml" /></p>
+
+<ul>
+  <li>여러 가지 다이어그램을 그리기 위해서 <code class="language-plaintext highlighter-rouge">GraphViz</code> 를 설치해야 합니다. macOS에서 homebrew를 통해 쉽게 설치할 수 있습니다.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>graphviz
 </code></pre></div></div>
 
+<p>설치를 다 하고 나서 Visual Studio Code에서 다음과 같이 PlantUML 스크립트를 작성합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@startuml</span>
+
+<span class="n">scale</span> <span class="mi">2</span>
+<span class="kd">class</span> <span class="nc">Event</span> <span class="o">{</span>
+    <span class="o">+</span><span class="nl">startTime:</span> <span class="nc">DateTime</span>
+    <span class="o">+</span><span class="nl">venue:</span> <span class="n">string</span>
+    <span class="o">+</span><span class="nl">registrationClosed:</span> <span class="kt">boolean</span>
+    <span class="o">-</span><span class="n">notifyAttendes</span><span class="o">()</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">ApplicationUser</span> <span class="o">{</span>
+    <span class="o">-</span><span class="nl">username:</span> <span class="n">string</span>
+    <span class="o">-</span><span class="nl">password:</span> <span class="n">string</span>
+    <span class="o">+</span><span class="nl">isLocked:</span> <span class="kt">boolean</span>
+    <span class="o">-</span><span class="n">suggestRandomPassword</span><span class="o">()</span>
+    <span class="o">+</span><span class="n">changeProfilePic</span><span class="o">()</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Speaker</span> <span class="o">{</span>
+    <span class="o">+</span><span class="nl">openForSpeaking:</span> <span class="kt">boolean</span>
+    <span class="o">-</span><span class="n">callForAction</span><span class="o">()</span>
+    <span class="o">+</span><span class="n">applyAsSpokePerson</span><span class="o">()</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Topic</span> <span class="o">{</span>
+    <span class="o">+</span><span class="nl">title:</span> <span class="n">string</span>
+    <span class="o">+</span><span class="nl">sourcesCodeUrl:</span> <span class="n">string</span>
+    <span class="o">+</span><span class="n">downloadMaterials</span><span class="o">()</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Attendee</span> <span class="o">{</span>
+    <span class="o">-</span><span class="nl">eventAttended:</span> <span class="n">number</span>
+    <span class="o">-</span><span class="n">suggestEventBasedOnPreference</span><span class="o">()</span>
+    <span class="o">+</span><span class="n">registerForTicket</span><span class="o">()</span>
+<span class="o">}</span>
+
+<span class="nc">ApplicationUser</span> <span class="o">&lt;|--</span> <span class="nc">Speaker</span>
+<span class="nc">ApplicationUser</span> <span class="o">&lt;|--</span> <span class="nc">Attendee</span>
+<span class="nc">Speaker</span> <span class="s">"1"</span> <span class="o">*--</span> <span class="s">"*"</span> <span class="nc">Topic</span>
+<span class="nc">Event</span> <span class="s">"1"</span> <span class="n">o</span><span class="o">--</span> <span class="s">"*"</span> <span class="nc">Speaker</span>
+<span class="nc">Event</span> <span class="s">"1"</span> <span class="n">o</span><span class="o">--</span> <span class="s">"*"</span> <span class="nc">Attendee</span>
+
+<span class="nd">@enduml</span>
+</code></pre></div></div>
+
+<p>스크립트 작성 후 <code class="language-plaintext highlighter-rouge">shift + command + p</code>를 누르고 <code class="language-plaintext highlighter-rouge">PlantUML: Preview Current Diagram</code>을 입력하고 선택합니다. 그러면 다음 화면과 같이 UML을 확인할 수 있습니다.</p>
+
+<p><img src="/assets/image/2021-03-12 at 10.00.01 PM-umlsource.png" alt="2021-03-12 at 10.00.01 PM-umlsource" /></p>
+
+<hr />
+
+<h3 id="참고-url">참고 URL</h3>
+
+<ul>
+  <li>Visual Studio Code: https://code.visualstudio.com</li>
+  <li>PlantUML: https://plantuml.com/ko/</li>
+  <li>Graphviz: https://graphviz.org</li>
+</ul>
 
         
       </section>
@@ -364,14 +434,14 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#macos" class="page__taxonomy-item" rel="tag">macOS</a>
+      <a href="/categories/#uml" class="page__taxonomy-item" rel="tag">UML</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-09">March 9, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-12">March 12, 2021</time></p>
 
 
       </footer>
@@ -381,23 +451,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=macOS+%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8+%ED%9B%84+%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC+%EC%97%90%EB%9F%AC+%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0%28xcrun+error%29%20%2Fmacos%2FmacOS-%25EC%2597%2585%25EB%258D%25B0%25EC%259D%25B4%25ED%258A%25B8-%25ED%259B%2584-%25EA%25B0%259C%25EB%25B0%259C%25EB%258F%2584%25EA%25B5%25AC-%25EC%2597%2590%25EB%259F%25AC-%25ED%2595%25B4%25EA%25B2%25B0%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=UML+%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0+%28feat.+PlantUML%29%20%2Fuml%2FUML-%25EC%259E%2591%25EC%2584%25B1%25ED%2595%2598%25EA%25B8%25B0-%28feat.PlantUML%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fmacos%2FmacOS-%25EC%2597%2585%25EB%258D%25B0%25EC%259D%25B4%25ED%258A%25B8-%25ED%259B%2584-%25EA%25B0%259C%25EB%25B0%259C%25EB%258F%2584%25EA%25B5%25AC-%25EC%2597%2590%25EB%259F%25AC-%25ED%2595%25B4%25EA%25B2%25B0%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fuml%2FUML-%25EC%259E%2591%25EC%2584%25B1%25ED%2595%2598%25EA%25B8%25B0-%28feat.PlantUML%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fmacos%2FmacOS-%25EC%2597%2585%25EB%258D%25B0%25EC%259D%25B4%25ED%258A%25B8-%25ED%259B%2584-%25EA%25B0%259C%25EB%25B0%259C%25EB%258F%2584%25EA%25B5%25AC-%25EC%2597%2590%25EB%259F%25AC-%25ED%2595%25B4%25EA%25B2%25B0%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fuml%2FUML-%25EC%259E%2591%25EC%2584%25B1%25ED%2595%2598%25EA%25B8%25B0-%28feat.PlantUML%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/vapor/web%20framework/Vapor(Swift-Server-Side-Framework)-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/" class="pagination--pager" title="Vapor(Swift Server Side Web Framework)
+      <a href="/vim/Vim-%EC%84%A4%EC%A0%95-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/" class="pagination--pager" title="Vim 환경설정 세팅하기
 ">이전</a>
     
     
-      <a href="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" class="pagination--pager" title="macOS Command Line Tool 프로젝트에 Unit Test 추가하기
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -411,52 +480,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/" rel="permalink">UML 작성하기 (feat. PlantUML)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-03-12T00:00:00+09:00">March 12, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">UML 작성하기
-</p>
-  </article>
-</div>
-
         
           
 
@@ -591,6 +614,52 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">macOS 프로젝트에서 테스트 생성하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/macos/macOS-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/" rel="permalink">macOS 업데이트 후 개발도구 에러 해결하기(xcrun error)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-03-09T00:00:00+09:00">March 9, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">xcrun: error: invalid active developer path 에러 해결하기
 </p>
   </article>
 </div>
