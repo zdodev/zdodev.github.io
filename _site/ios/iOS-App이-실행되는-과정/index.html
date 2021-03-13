@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>iOS link - zerodotone</title>
-<meta name="description" content="링크 모음">
+<!-- begin _includes/seo.html --><title>iOS App이 실행되는 과정 - zerodotone</title>
+<meta name="description" content="iOS App이 실행되는 과정">
 
 
   <meta name="author" content="zerodotone">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="zerodotone">
-<meta property="og:title" content="iOS link">
-<meta property="og:url" content="/ios/iOS-link/">
+<meta property="og:title" content="iOS App이 실행되는 과정">
+<meta property="og:url" content="/ios/iOS-App%EC%9D%B4-%EC%8B%A4%ED%96%89%EB%90%98%EB%8A%94-%EA%B3%BC%EC%A0%95/">
 
 
-  <meta property="og:description" content="링크 모음">
-
-
-
+  <meta property="og:description" content="iOS App이 실행되는 과정">
 
 
 
 
-  <meta property="article:published_time" content="2021-02-27T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-02-27T10:51:00+09:00">
+  <meta property="article:published_time" content="2021-03-13T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-03-14T07:35:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="/ios/iOS-link/">
+
+<link rel="canonical" href="/ios/iOS-App%EC%9D%B4-%EC%8B%A4%ED%96%89%EB%90%98%EB%8A%94-%EA%B3%BC%EC%A0%95/">
 
 
 
@@ -285,15 +285,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="iOS link">
-    <meta itemprop="description" content="링크 모음">
-    <meta itemprop="datePublished" content="2021-02-27T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-02-27T10:51:00+09:00">
+    <meta itemprop="headline" content="iOS App이 실행되는 과정">
+    <meta itemprop="description" content="iOS App이 실행되는 과정">
+    <meta itemprop="datePublished" content="2021-03-13T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-14T07:35:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">iOS link
+          <h1 id="page-title" class="page__title" itemprop="headline">iOS App이 실행되는 과정
 </h1>
           
 
@@ -302,7 +302,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-02-27T00:00:00+09:00">February 27, 2021</time>
+        <time datetime="2021-03-13T00:00:00+09:00">March 13, 2021</time>
       </span>
     
 
@@ -330,15 +330,60 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#ios-app이-실행되는-과정">iOS App이 실행되는 과정</a></li><li><a href="#참고-url">참고 URL</a></li></ul>
 
             </nav>
           </aside>
         
-        <p>링크 모음</p>
+        <h3 id="ios-app이-실행되는-과정">iOS App이 실행되는 과정</h3>
 
-<p><a href="https://theswiftdev.com/conventions-for-xcode/">Xcode 프로젝트 컨벤션</a>: Xcode 프로젝트 구성 시 네이밍 컨벤션 도움글.</p>
+<p>iOS 애플리케이션 실행 과정에 일어나는 초기화 과정과 애플리케이션 라이프사이클 이벤트를 알아보았습니다.</p>
 
+<p>아래 그림은 애플 공식 사이트에 있는 그림입니다.</p>
+
+<p><img src="/assets/image/2021-03-13 at 10.00.01 PM-theapplaunchandinitalizationsequence.png" alt="2021-03-13 at 10.00.01 PM-theapplaunchandinitalizationsequence" /></p>
+
+<h2 id="main-함수">main() 함수</h2>
+
+<p><code class="language-plaintext highlighter-rouge">main()</code>은 iOS의 시작지점이자 Swift의 시작지점입니다. main() 함수를 호출하면서 앱이 시작됩니다. main() 함수는 UIKit이 관리하기 때문에 일반적으로 사용할 일은 없습니다. 그러나 개발자가 main() 함수를 조작할 방법이 없는 것은 아닙니다. main() 함수를 조작하면 프로젝트에서 재미있는 경험을 할 수 있습니다.</p>
+
+<p>애플 공식 문서에서 main()에 대해 찾아보았습니다.</p>
+
+<p><img src="/assets/image/2021-03-13 at 10.00.01 PM-main.png" alt="2021-03-13 at 10.00.01 PM-main" /></p>
+
+<p>아무 설명이 없습니다. 🤬</p>
+
+<p>main() 함수는 <code class="language-plaintext highlighter-rouge">UIApplicationMain(_:_:_:_:)</code> 함수를 호출합니다.</p>
+
+<h2 id="uiapplicationmain____">UIApplicationMain(_:_:_:_:)</h2>
+
+<p>그 다음으로 <code class="language-plaintext highlighter-rouge">UIApplicationMain(_:_:_:_:)</code> 함수가 호출됩니다. UIApplicationMain(<em>:</em>:<em>:</em>:) 함수는 <code class="language-plaintext highlighter-rouge">UIApplication</code> 객체를 만들고 앱 델리게이트를 만듭니다. 그리고 이벤트 사이클을 설정합니다.</p>
+
+<p>애플 공식 문서에서 UIApplicationMain(<em>:</em>:<em>:</em>:)에 대해 찾아보았습니다.</p>
+
+<p>다음과 같이 설명이 되어있습니다.</p>
+
+<p><img src="/assets/image/2021-03-13 at 10.00.01 PM-uiapplicationmain.png" alt="2021-03-13 at 10.00.01 PM-uiapplicationmain" /></p>
+
+<p>UIApplicationMain(<em>:</em>:<em>:</em>:) 호출 이후, UIKit은 메인 스토리보드 또는 nib 파일에서 앱의 기본 인터페이스를 로드합니다.</p>
+
+<h2 id="application_willfinishlaunchingwithoptions">application(_:willFinishLaunchingWithOptions:)</h2>
+
+<p>이제부터는 Xcode 프로젝트에서 찾아볼 수 있는 메서드입니다. application(_:willFinishLaunchingWithOptions:)는 앱 초기화를 하기위한 메서드입니다. 앱이 실행되었지만 아직 준비가 끝난 단계가 아닙니다.</p>
+
+<h2 id="application_didfinishlaunchingwithoptions">application(_:didFinishLaunchingWithOptions:)</h2>
+
+<p><code class="language-plaintext highlighter-rouge">application(_:didFinishLaunchingWithOptions:)</code> 메서드는 앱의 초기화가 완료되고 호출되는 메서드입니다. 앱이 실행할 준비를 마친 단계입니다.</p>
+
+<p>이후 iOS는 Window와 Scene 그리고 ViewController를 생성합니다.</p>
+
+<h3 id="참고-url">참고 URL</h3>
+
+<hr />
+
+<ul>
+  <li><a href="https://developer.apple.com/documentation/uikit/app_and_environment/responding_to_the_launch_of_your_app/about_the_app_launch_sequence">About the App Launch Sequence</a></li>
+</ul>
 
         
       </section>
@@ -364,7 +409,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-02-27">February 27, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-13">March 13, 2021</time></p>
 
 
       </footer>
@@ -374,23 +419,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=iOS+link%20%2Fios%2FiOS-link%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=iOS+App%EC%9D%B4+%EC%8B%A4%ED%96%89%EB%90%98%EB%8A%94+%EA%B3%BC%EC%A0%95%20%2Fios%2FiOS-App%25EC%259D%25B4-%25EC%258B%25A4%25ED%2596%2589%25EB%2590%2598%25EB%258A%2594-%25EA%25B3%25BC%25EC%25A0%2595%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fios%2FiOS-link%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fios%2FiOS-App%25EC%259D%25B4-%25EC%258B%25A4%25ED%2596%2589%25EB%2590%2598%25EB%258A%2594-%25EA%25B3%25BC%25EC%25A0%2595%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fios%2FiOS-link%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fios%2FiOS-App%25EC%259D%25B4-%25EC%258B%25A4%25ED%2596%2589%25EB%2590%2598%25EB%258A%2594-%25EA%25B3%25BC%25EC%25A0%2595%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/etc/first-post/" class="pagination--pager" title="first post
+      <a href="/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/" class="pagination--pager" title="UML 작성하기 (feat. PlantUML)
 ">이전</a>
     
     
-      <a href="/uml/swift/UML-Class-Diagram/" class="pagination--pager" title="UML Class Diagram with Swift
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -404,52 +448,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/ios/iOS-App%EC%9D%B4-%EC%8B%A4%ED%96%89%EB%90%98%EB%8A%94-%EA%B3%BC%EC%A0%95/" rel="permalink">iOS App이 실행되는 과정
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-03-13T00:00:00+09:00">March 13, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">iOS App이 실행되는 과정
-</p>
-  </article>
-</div>
-
         
           
 
@@ -584,6 +582,52 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">Swift에서 키보드, 커맨드라인(표준입력)으로 입력받는 방법
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/macos/xctest/macOS-Command-Line-Tool-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Unit-Test-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/" rel="permalink">macOS Command Line Tool 프로젝트에 Unit Test 추가하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-03-10T00:00:00+09:00">March 10, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">macOS 프로젝트에서 테스트 생성하기
 </p>
   </article>
 </div>

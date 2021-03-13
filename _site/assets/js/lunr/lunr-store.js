@@ -58,4 +58,10 @@ var store = [{
         "tags": [],
         "url": "/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/",
         "teaser": null
+      },{
+        "title": "iOS App이 실행되는 과정",
+        "excerpt":"iOS App이 실행되는 과정   iOS 애플리케이션 실행 과정에 일어나는 초기화 과정과 애플리케이션 라이프사이클 이벤트를 알아보았습니다.   아래 그림은 애플 공식 사이트에 있는 그림입니다.      main() 함수   main()은 iOS의 시작지점이자 Swift의 시작지점입니다. main() 함수를 호출하면서 앱이 시작됩니다. main() 함수는 UIKit이 관리하기 때문에 일반적으로 사용할 일은 없습니다. 그러나 개발자가 main() 함수를 조작할 방법이 없는 것은 아닙니다. main() 함수를 조작하면 프로젝트에서 재미있는 경험을 할 수 있습니다.   애플 공식 문서에서 main()에 대해 찾아보았습니다.      아무 설명이 없습니다. 🤬   main() 함수는 UIApplicationMain(_:_:_:_:) 함수를 호출합니다.   UIApplicationMain(_:_:_:_:)   그 다음으로 UIApplicationMain(_:_:_:_:) 함수가 호출됩니다. UIApplicationMain(::::) 함수는 UIApplication 객체를 만들고 앱 델리게이트를 만듭니다. 그리고 이벤트 사이클을 설정합니다.   애플 공식 문서에서 UIApplicationMain(::::)에 대해 찾아보았습니다.   다음과 같이 설명이 되어있습니다.      UIApplicationMain(::::) 호출 이후, UIKit은 메인 스토리보드 또는 nib 파일에서 앱의 기본 인터페이스를 로드합니다.   application(_:willFinishLaunchingWithOptions:)   이제부터는 Xcode 프로젝트에서 찾아볼 수 있는 메서드입니다. application(_:willFinishLaunchingWithOptions:)는 앱 초기화를 하기위한 메서드입니다. 앱이 실행되었지만 아직 준비가 끝난 단계가 아닙니다.   application(_:didFinishLaunchingWithOptions:)   application(_:didFinishLaunchingWithOptions:) 메서드는 앱의 초기화가 완료되고 호출되는 메서드입니다. 앱이 실행할 준비를 마친 단계입니다.   이후 iOS는 Window와 Scene 그리고 ViewController를 생성합니다.   참고 URL        About the App Launch Sequence  ","categories": ["iOS"],
+        "tags": [],
+        "url": "/ios/iOS-App%EC%9D%B4-%EC%8B%A4%ED%96%89%EB%90%98%EB%8A%94-%EA%B3%BC%EC%A0%95/",
+        "teaser": null
       }]

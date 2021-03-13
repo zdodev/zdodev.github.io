@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-12T23:15:15+09:00</updated><id>/feed.xml</id><title type="html">zerodotone</title><subtitle>An amazing website.</subtitle><author><name>zerodotone</name></author><entry><title type="html">UML 작성하기 (feat. PlantUML)</title><link href="/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/" rel="alternate" type="text/html" title="UML 작성하기 (feat. PlantUML)" /><published>2021-03-12T00:00:00+09:00</published><updated>2021-03-13T08:04:00+09:00</updated><id>/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)</id><content type="html" xml:base="/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/">&lt;h3 id=&quot;uml-작성하기&quot;&gt;UML 작성하기&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-13T22:52:03+09:00</updated><id>/feed.xml</id><title type="html">zerodotone</title><subtitle>An amazing website.</subtitle><author><name>zerodotone</name></author><entry><title type="html">iOS App이 실행되는 과정</title><link href="/ios/iOS-App%EC%9D%B4-%EC%8B%A4%ED%96%89%EB%90%98%EB%8A%94-%EA%B3%BC%EC%A0%95/" rel="alternate" type="text/html" title="iOS App이 실행되는 과정" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-14T07:35:00+09:00</updated><id>/ios/iOS-App%EC%9D%B4-%EC%8B%A4%ED%96%89%EB%90%98%EB%8A%94-%EA%B3%BC%EC%A0%95</id><content type="html" xml:base="/ios/iOS-App%EC%9D%B4-%EC%8B%A4%ED%96%89%EB%90%98%EB%8A%94-%EA%B3%BC%EC%A0%95/">&lt;h3 id=&quot;ios-app이-실행되는-과정&quot;&gt;iOS App이 실행되는 과정&lt;/h3&gt;
+
+&lt;p&gt;iOS 애플리케이션 실행 과정에 일어나는 초기화 과정과 애플리케이션 라이프사이클 이벤트를 알아보았습니다.&lt;/p&gt;
+
+&lt;p&gt;아래 그림은 애플 공식 사이트에 있는 그림입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-13 at 10.00.01 PM-theapplaunchandinitalizationsequence.png&quot; alt=&quot;2021-03-13 at 10.00.01 PM-theapplaunchandinitalizationsequence&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;main-함수&quot;&gt;main() 함수&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main()&lt;/code&gt;은 iOS의 시작지점이자 Swift의 시작지점입니다. main() 함수를 호출하면서 앱이 시작됩니다. main() 함수는 UIKit이 관리하기 때문에 일반적으로 사용할 일은 없습니다. 그러나 개발자가 main() 함수를 조작할 방법이 없는 것은 아닙니다. main() 함수를 조작하면 프로젝트에서 재미있는 경험을 할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;애플 공식 문서에서 main()에 대해 찾아보았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-13 at 10.00.01 PM-main.png&quot; alt=&quot;2021-03-13 at 10.00.01 PM-main&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;아무 설명이 없습니다. 🤬&lt;/p&gt;
+
+&lt;p&gt;main() 함수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UIApplicationMain(_:_:_:_:)&lt;/code&gt; 함수를 호출합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;uiapplicationmain____&quot;&gt;UIApplicationMain(_:_:_:_:)&lt;/h2&gt;
+
+&lt;p&gt;그 다음으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UIApplicationMain(_:_:_:_:)&lt;/code&gt; 함수가 호출됩니다. UIApplicationMain(&lt;em&gt;:&lt;/em&gt;:&lt;em&gt;:&lt;/em&gt;:) 함수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UIApplication&lt;/code&gt; 객체를 만들고 앱 델리게이트를 만듭니다. 그리고 이벤트 사이클을 설정합니다.&lt;/p&gt;
+
+&lt;p&gt;애플 공식 문서에서 UIApplicationMain(&lt;em&gt;:&lt;/em&gt;:&lt;em&gt;:&lt;/em&gt;:)에 대해 찾아보았습니다.&lt;/p&gt;
+
+&lt;p&gt;다음과 같이 설명이 되어있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/2021-03-13 at 10.00.01 PM-uiapplicationmain.png&quot; alt=&quot;2021-03-13 at 10.00.01 PM-uiapplicationmain&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;UIApplicationMain(&lt;em&gt;:&lt;/em&gt;:&lt;em&gt;:&lt;/em&gt;:) 호출 이후, UIKit은 메인 스토리보드 또는 nib 파일에서 앱의 기본 인터페이스를 로드합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;application_willfinishlaunchingwithoptions&quot;&gt;application(_:willFinishLaunchingWithOptions:)&lt;/h2&gt;
+
+&lt;p&gt;이제부터는 Xcode 프로젝트에서 찾아볼 수 있는 메서드입니다. application(_:willFinishLaunchingWithOptions:)는 앱 초기화를 하기위한 메서드입니다. 앱이 실행되었지만 아직 준비가 끝난 단계가 아닙니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;application_didfinishlaunchingwithoptions&quot;&gt;application(_:didFinishLaunchingWithOptions:)&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;application(_:didFinishLaunchingWithOptions:)&lt;/code&gt; 메서드는 앱의 초기화가 완료되고 호출되는 메서드입니다. 앱이 실행할 준비를 마친 단계입니다.&lt;/p&gt;
+
+&lt;p&gt;이후 iOS는 Window와 Scene 그리고 ViewController를 생성합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;참고-url&quot;&gt;참고 URL&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/app_and_environment/responding_to_the_launch_of_your_app/about_the_app_launch_sequence&quot;&gt;About the App Launch Sequence&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>zerodotone</name></author><category term="iOS" /><summary type="html">iOS App이 실행되는 과정</summary></entry><entry><title type="html">UML 작성하기 (feat. PlantUML)</title><link href="/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/" rel="alternate" type="text/html" title="UML 작성하기 (feat. PlantUML)" /><published>2021-03-12T00:00:00+09:00</published><updated>2021-03-13T08:04:00+09:00</updated><id>/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)</id><content type="html" xml:base="/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/">&lt;h3 id=&quot;uml-작성하기&quot;&gt;UML 작성하기&lt;/h3&gt;
 
 &lt;p&gt;프로젝트를 시작하기 전에나 기존의 코드들 구성을 가시적으로 보고 싶어서 여러 방법을 고민하다가 UML을 작성해보기로 했습니다.&lt;/p&gt;
 
@@ -529,33 +577,4 @@ open Package.swift
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>zerodotone</name></author><category term="UML" /><category term="Swift" /><summary type="html">Class Diagram, 클래스 다이어그램</summary></entry><entry><title type="html">iOS link</title><link href="/ios/iOS-link/" rel="alternate" type="text/html" title="iOS link" /><published>2021-02-27T00:00:00+09:00</published><updated>2021-02-27T10:51:00+09:00</updated><id>/ios/iOS-link</id><content type="html" xml:base="/ios/iOS-link/">&lt;p&gt;링크 모음&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://theswiftdev.com/conventions-for-xcode/&quot;&gt;Xcode 프로젝트 컨벤션&lt;/a&gt;: Xcode 프로젝트 구성 시 네이밍 컨벤션 도움글.&lt;/p&gt;</content><author><name>zerodotone</name></author><category term="iOS" /><summary type="html">링크 모음</summary></entry><entry><title type="html">first post</title><link href="/etc/first-post/" rel="alternate" type="text/html" title="first post" /><published>2021-02-24T00:00:00+09:00</published><updated>2021-02-26T11:35:00+09:00</updated><id>/etc/first-post</id><content type="html" xml:base="/etc/first-post/">&lt;p&gt;zerodotone의 첫 포스팅인 것인가&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;이것은 인용인 것인가&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;h2 id=&quot;이것은-단락인-것인가-header-2-인-것인가&quot;&gt;이것은 단락인 것인가 header 2 인 것인가&lt;/h2&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;swift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;이것은 코드인 것인가&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이것은 코드인 것이다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;h2 id=&quot;하나-둘-셋&quot;&gt;하나 둘 셋&lt;/h2&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;이것은 하나 둘 셋 인 것인가&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;https://zdodev.github.io&quot;&gt;내 블로그인 것이야&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>zerodotone</name></author><category term="etc" /><summary type="html">zerodotone의 첫 포스팅인 것인가</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://theswiftdev.com/conventions-for-xcode/&quot;&gt;Xcode 프로젝트 컨벤션&lt;/a&gt;: Xcode 프로젝트 구성 시 네이밍 컨벤션 도움글.&lt;/p&gt;</content><author><name>zerodotone</name></author><category term="iOS" /><summary type="html">링크 모음</summary></entry></feed>
