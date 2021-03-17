@@ -1,7 +1,7 @@
 ---
 title: "상시 무료 클라우드 서비스(오라클 클라우드 프리 티어)"
 categories: 
-  - Swift
+  - Cloud
 last_modified_at: 2021-03-16 21:37:00
 toc: true #Table of Contents
 comments: true
