@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>상시 무료 클라우드 서비스(오라클 클라우드 프리 티어) - zerodotone</title>
-<meta name="description" content="오라클 클라우드 프리 티어">
+<!-- begin _includes/seo.html --><title>iOS UIView의 init?(coder: NSCoder) 초기화 메서드란? - zerodotone</title>
+<meta name="description" content="iOS의 init?(coder: NSCoder) 메서드">
 
 
   <meta name="author" content="zerodotone">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="zerodotone">
-<meta property="og:title" content="상시 무료 클라우드 서비스(오라클 클라우드 프리 티어)">
-<meta property="og:url" content="/swift/Cloud-Free-Tier/">
+<meta property="og:title" content="iOS UIView의 init?(coder: NSCoder) 초기화 메서드란?">
+<meta property="og:url" content="/ios/iOS-UIView%EC%9D%98-init-method/">
 
 
-  <meta property="og:description" content="오라클 클라우드 프리 티어">
-
-
-
+  <meta property="og:description" content="iOS의 init?(coder: NSCoder) 메서드">
 
 
 
 
-  <meta property="article:published_time" content="2021-03-17T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-03-17T06:37:00+09:00">
+  <meta property="article:published_time" content="2021-03-18T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-03-18T09:15:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="/swift/Cloud-Free-Tier/">
+
+<link rel="canonical" href="/ios/iOS-UIView%EC%9D%98-init-method/">
 
 
 
@@ -147,9 +147,9 @@
           <span class="site-subtitle">😎</span>
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/about/">About</a>
-            </li><li class="masthead__menu-item">
               <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -287,15 +287,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="상시 무료 클라우드 서비스(오라클 클라우드 프리 티어)">
-    <meta itemprop="description" content="오라클 클라우드 프리 티어">
-    <meta itemprop="datePublished" content="2021-03-17T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-03-17T06:37:00+09:00">
+    <meta itemprop="headline" content="iOS UIView의 init?(coder: NSCoder) 초기화 메서드란?">
+    <meta itemprop="description" content="iOS의 init?(coder: NSCoder) 메서드">
+    <meta itemprop="datePublished" content="2021-03-18T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-18T09:15:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">상시 무료 클라우드 서비스(오라클 클라우드 프리 티어)
+          <h1 id="page-title" class="page__title" itemprop="headline">iOS UIView의 init?(coder: NSCoder) 초기화 메서드란?
 </h1>
           
 
@@ -304,7 +304,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-03-17T00:00:00+09:00">March 17, 2021</time>
+        <time datetime="2021-03-18T00:00:00+09:00">March 18, 2021</time>
       </span>
     
 
@@ -317,7 +317,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          최대 1 분 소요
         
       </span>
     
@@ -332,47 +332,53 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#오라클-클라우드-프리-티어">오라클 클라우드 프리 티어</a></li></ul>
+              <ul class="toc__menu"><li><a href="#ios의-initcoder-nscoder-메서드">iOS의 init?(coder: NSCoder) 메서드</a><ul><li><a href="#참고-url">참고 URL</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="오라클-클라우드-프리-티어">오라클 클라우드 프리 티어</h2>
+        <h2 id="ios의-initcoder-nscoder-메서드">iOS의 init?(coder: NSCoder) 메서드</h2>
 
-<p>많은 클라우드 서비스들이 있지만, 오라클에서 상시 무료로 사용할 수 있는 사용 스펙이 훌륭한? 서비스가 나왔다고 해서 사용해보았습니다. 아래 링크에 접속하면 관련 서비스로 이동할 수 있습니다.</p>
+<p>UIView 클래스의 초기화 메서드를 보면 두 가지가 있습니다. 첫 번째 메서드는 이해가 가지만 두 번째 메서드가 이해가 가지 않아서 정리해보았습니다.</p>
 
-<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjqtq7borXvAhXZc94KHRROAMIQFjAAegQIAhAD&amp;url=https%3A%2F%2Fwww.oracle.com%2Fkr%2Fcloud%2Ffree%2F&amp;usg=AOvVaw1QkZZV7WHt62PXOLxhggX3">Oracle Cloud Free Tire</a></p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// UIView initializer method</span>
+<span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span> <span class="c1">// 첫 번째</span>
 
-<p>상시 무료 제공 스펙은 다음과 같습니다.</p>
+<span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="c1">// 두 번째</span>
+</code></pre></div></div>
+
+<p>애플 공식 홈페이지에서 찾아봤습니다.</p>
+
+<p><img src="/assets/image/2021-03-18 at 00.14.05 AM-init.png" alt="2021-03-18 at 00.14.05 AM-init" /></p>
+
+<p>아무 설명이 없습니다.🤬</p>
+
+<p>그래서 더 많은 검색을 시도하여 다음과 같은 결과를 확인했습니다.</p>
+
+<p>첫 번째 <code class="language-plaintext highlighter-rouge">init(frame: CGRect)</code> 초기화 메서드는 <code class="language-plaintext highlighter-rouge">CGRect</code> 구조체에 정의된 위치와 크기를 통해 UIView를 생성합니다. 주로 코드로 UI를 개발할 때 사용합니다.</p>
+
+<p>두 번째 <code class="language-plaintext highlighter-rouge">init?(coder: NSCoder)</code> 초기화 메서드는 코드로 생성하는 것이 아닌 스토리보드(또는 Xib)를 통해서 UIView를 생성할 때 사용합니다.</p>
+
+<p>그래서 UIStoryboard에 대해서 찾아보았습니다.</p>
+
+<p><img src="/assets/image/2021-03-18 at 00.15.05 AM-storyboard.png" alt="2021-03-18 at 00.15.05 AM-storyboard" /></p>
+
+<p>다음과 같은 설명이 있습니다.</p>
+
+<blockquote>
+  <p>프로세스를 초기화하는 동안 UIStoryboard는 init(coder:) 메서드를 사용하여 프로그래밍 방식으로 뷰 컨트롤러를 생성합니다.</p>
+</blockquote>
+
+<p>위에 적힌 내용처럼 init?(coder: NSCoder) 초기화 메서드는 스토리보드에서 사용하는 것을 알 수 있습니다.</p>
+
+<h3 id="참고-url">참고 URL</h3>
+
+<hr />
 
 <ul>
-  <li>Oracle Application Express(APEX) 및 Oracle SQL Developer와 같은 강력한 도구가 있는 Oracle Autonomous Database 2개</li>
-  <li>Oracle Cloud Infrastructure 컴퓨팅 VM 2개, 블록, 객체 및 아카이브 스토리지, 로드 밸런서 및 데이터 이그레스, 모니터링 및 알림</li>
-  <li>자율 운영 데이터베이스 2개, 각각 20GB</li>
-  <li>1/8 OCPU 및 1GB 메모리</li>
-  <li>2개의 블록 볼륨, 총 100GB 블록 볼륨, 10GB 객체 스토리지, 10GB 아카이브 스토리지.</li>
-  <li>로드 밸런서: 인스턴스 1개, 10Mbps 대역폭</li>
-  <li>모니터링: 5억 개의 수집 데이터 포인트, 10억 개의 검색 데이터 포인트</li>
-  <li>알림: 매월 https를 통해 전송되는 백만 개</li>
-  <li>매월 이메일을 통해 전송되는 1,000개</li>
-  <li>데이터 전송: 매월 10TB</li>
+  <li><a href="https://developer.apple.com/documentation/uikit/uiview/1622477-init">UIView init?(coder: NSCoder)</a></li>
+  <li><a href="https://developer.apple.com/documentation/uikit/uistoryboard">UIStoryboard</a></li>
 </ul>
-
-<p>다른 스펙은 넘기고 컴퓨팅 자원을 50GB, 1GB, 매월 10TB 트래픽을 사용할 수 있다는 점에서 다른 클라우드 서비스보다 훨씬 좋다고 생각합니다. 상시 무료 서비스라서 기간 제한은 없는 점이 매력적이지만 나중에 약관이 변경될 수 있지 않을까 싶지만 24시간 컴퓨터를 무료로 사용할 수 있다는 점에서 매력적입니다.</p>
-
-<p>아래는 오라클 클라우드 서비스 시작하기 화면입니다.</p>
-
-<p><img src="/assets/image/2021-03-17 at 2.06.08 AM-start.png" alt="2021-03-17 at 2.06.08 AM-start" /></p>
-
-<p>동작 중인 컴퓨터를 보여주는 대시보드입니다.</p>
-
-<p><img src="/assets/image/2021-03-17 at 2.07.45 AM-dashboard.png" alt="2021-03-17 at 2.07.45 AM-dashboard" /></p>
-
-<p>오라클 클라우드에서 생성한 우분투에 접속한 화면입니다. 50GB, Ubuntu 20.04.2 LTS 버전을 확인할 수 있습니다.</p>
-
-<p><img src="/assets/image/2021-03-17 at 2.09.05 AM-ubuntu.png" alt="2021-03-17 at 2.09.05 AM-ubuntu" /></p>
-
-<p>용량과 메모리가 한정적이긴 하지만 매월 10TB 트래픽과 고정 IP를 제공해준다는 점에서 무료 서버 구축 서비스 중에서 좋은 선택지가 될 수 있다고 생각합니다.</p>
 
         
       </section>
@@ -391,14 +397,14 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#swift" class="page__taxonomy-item" rel="tag">Swift</a>
+      <a href="/categories/#ios" class="page__taxonomy-item" rel="tag">iOS</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-16">March 16, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-18">March 18, 2021</time></p>
 
 
       </footer>
@@ -408,20 +414,18 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%EC%83%81%EC%8B%9C+%EB%AC%B4%EB%A3%8C+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C+%EC%84%9C%EB%B9%84%EC%8A%A4%28%EC%98%A4%EB%9D%BC%ED%81%B4+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C+%ED%94%84%EB%A6%AC+%ED%8B%B0%EC%96%B4%29%20%2Fswift%2FCloud-Free-Tier%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=iOS+UIView%EC%9D%98+init%3F%28coder%3A+NSCoder%29+%EC%B4%88%EA%B8%B0%ED%99%94+%EB%A9%94%EC%84%9C%EB%93%9C%EB%9E%80%3F%20%2Fios%2FiOS-UIView%25EC%259D%2598-init-method%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fswift%2FCloud-Free-Tier%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fios%2FiOS-UIView%25EC%259D%2598-init-method%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fswift%2FCloud-Free-Tier%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Fios%2FiOS-UIView%25EC%259D%2598-init-method%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/swift/Swift-The-Basics/" class="pagination--pager" title="
-  Swift The Basics
-
+      <a href="/cloud/Cloud-Free-Tier/" class="pagination--pager" title="상시 무료 클라우드 서비스(오라클 클라우드 프리 티어)
 ">이전</a>
     
     
@@ -439,6 +443,52 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cloud/Cloud-Free-Tier/" rel="permalink">상시 무료 클라우드 서비스(오라클 클라우드 프리 티어)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-03-17T00:00:00+09:00">March 17, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오라클 클라우드 프리 티어
+</p>
+  </article>
+</div>
+
         
           
 
@@ -580,52 +630,6 @@
 </div>
 
         
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/uml/UML-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-(feat.PlantUML)/" rel="permalink">UML 작성하기 (feat. PlantUML)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-03-12T00:00:00+09:00">March 12, 2021</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">UML 작성하기
-</p>
-  </article>
-</div>
-
-        
       </div>
     </div>
   
@@ -680,7 +684,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 zerodotone. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2021 zerodotone 😎</div>
 
       </footer>
     </div>
