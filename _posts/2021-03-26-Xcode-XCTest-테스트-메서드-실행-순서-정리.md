@@ -159,5 +159,5 @@ class SetUpAndTearDownExampleTests: XCTestCase {
 
 ---
 
->   [Understanding Setup and Teardown for Test Methods] https://developer.apple.com/documentation/xctest/xctestcase/understanding_setup_and_teardown_for_test_methods
+>   [Understanding Setup and Teardown for Test Methods](https://developer.apple.com/documentation/xctest/xctestcase/understanding_setup_and_teardown_for_test_methods)
 
