@@ -9,7 +9,9 @@ comments: true
 
 ---
 
-## 자료구조, Data Structure
+## 데이터 타입, Data types
+
+---
 
 ### 원시 타입, Primitive types
 
@@ -52,6 +54,38 @@ comments: true
 | Graph              |      |
 
 
+
+## 선형 자료구조, Linear data structures
+
+---
+
+### 배열, Arrays
+
+### 리스트, Lists
+
+## 트리, Trees
+
+---
+
+### 이진 트리, Binary trees
+
+### B-trees
+
+### 힙, Heaps
+
+### Trees
+
+### Multi-way trees
+
+### Space-partitiong trees
+
+### Application-specific trees
+
+## 해쉬 구조, Hash-based structures
+
+---
+
+## 그래프, Graphs
 
 
 ### 참고 URL
