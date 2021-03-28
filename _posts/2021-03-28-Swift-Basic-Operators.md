@@ -1,5 +1,5 @@
 ---
-title: "02. Swift Basic Operators"
+title: "2 - Swift Basic Operators"
 categories: 
   - Swift
 last_modified_at: 2021-03-28 00:44:00
