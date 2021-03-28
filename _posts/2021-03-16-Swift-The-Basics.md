@@ -1,5 +1,5 @@
 ---
-title: "01. Swift The Basics"
+title: "1 - Swift The Basics"
 categories: 
   - Swift
 last_modified_at: 2021-03-16 21:37:00
