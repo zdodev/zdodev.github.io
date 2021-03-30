@@ -57,7 +57,7 @@ print(caseList)
 
 ### CaseIterable 정의
 
-`CaseIterable` 프로토콜은 애플 공식 홈페이지 Swift -> Swift Standard Library -> Basic Behaviors -> CaseIterable 에 나와있으며 정의는 다음과 같습니다.
+`CaseIterable` 프로토콜은 애플 공식 홈페이지 Swift -> Swift Standard Library -> Basic Behaviors -> CaseIterable 에 나와 있으며 정의는 다음과 같습니다.
 
 ```swift
 public protocol CaseIterable {
@@ -70,7 +70,7 @@ public protocol CaseIterable {
 
 ### 활용 방안
 
-열거형을 사용할 때 케이스가 늘어나거나 줄어들 수 있습니다. 그때마다 수정되는 코드가 늘어날 수 있습니다. 다음 예제처럼 메뉴가 늘어나거나 줄어들면 `printMenu(_:)` 함수도 변경되야 합니다.
+열거형을 사용할 때 케이스가 늘어나거나 줄어들 수 있습니다. 그때마다 수정되는 코드가 늘어날 수 있습니다. 다음 예제처럼 메뉴가 늘어나거나 줄어들면 `printMenu(_:)` 함수도 변경돼야 합니다.
 
 ```swift
 enum CafeMenu: Int {
@@ -90,7 +90,7 @@ func printMenu(_ number: Int) {
 }
 ```
 
-그런데 `CaseIterable` 프로토콜을 사용하면 `CafeMenu` 의 케이스가 늘어나거나 줄어들어도 `printMenu(_:)` 함수는 변경없이 사용할 수 있습니다.
+그런데 `CaseIterable` 프로토콜을 사용하면 `CafeMenu` 의 케이스가 늘어나거나 줄어들어도 `printMenu(_:)` 함수는 변경 없이 사용할 수 있습니다.
 
 ```swift
 enum CafeMenu: Int, CaseIterable {
