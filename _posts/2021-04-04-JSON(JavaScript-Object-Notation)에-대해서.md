@@ -120,32 +120,32 @@ JSON은 개방형 표준 파일 포맷으로 사람이 읽을 수 있는 문자�
 	{
 		"firstName": "Christian",
 		"lastName": "Bale"
-	}
-]
-{
-	"firstName": "John",
-	"lastName": "Smith",
-	"isAlive": true,
-	"age": 27,
-	"address": {
-		"streetAddress": "21 2nd Street",
-		"city": "New York",
-		"state": "NY",
-		"postalCode": "100021-3100"
 	},
-	"phoneNumbers": [
-		{
-			"type": "집",
-			"번호": "212 555-1234"
-		},
-		{
-			"type": "office",
-			"number": "646555-4567"
-		}
-	],
-	"children": [],
-	"spouse": null
-}
+    {
+        "firstName": "John",
+        "lastName": "Smith",
+        "isAlive": true,
+        "age": 27,
+        "address": {
+            "streetAddress": "21 2nd Street",
+            "city": "New York",
+            "state": "NY",
+            "postalCode": "100021-3100"
+        },
+        "phoneNumbers": [
+            {
+                "type": "집",
+                "번호": "212 555-1234"
+            },
+            {
+                "type": "office",
+                "number": "646555-4567"
+            }
+        ],
+        "children": [],
+        "spouse": null
+    }
+]
 ```
 
 ## 참고 링크
