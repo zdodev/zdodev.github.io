@@ -153,3 +153,11 @@ JSON은 개방형 표준 파일 포맷으로 사람이 읽을 수 있는 문자�
 	"spouse": null
 }
 ```
+
+## 참고 링크
+
+---
+
+>   [JSON 공식 홈페이지](https://www.json.org/json-en.html)
+>
+>   [Wiki JSON](https://en.wikipedia.org/wiki/JSON)
