@@ -1,7 +1,7 @@
 ---
 permalink: /about/
 title: "About"
-last_modified_at: 2021-03-12 00:24:00
+last_modified_at: 2021-04-09 01:00:00
 toc: true #Table of Contents
 ---
 
@@ -12,3 +12,8 @@ toc: true #Table of Contents
 Swift와 iOS
 
 내 꿈은 세계정복
+
+사이트맵 업데이트 하기~
+
+http://www.google.com/ping\?sitemap\=https://zdodev.github.io/sitemap.xml
+
