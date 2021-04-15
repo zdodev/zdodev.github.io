@@ -13,7 +13,3 @@ Swift와 iOS
 
 내 꿈은 세계정복
 
-사이트맵 업데이트 하기~
-
-http://www.google.com/ping\?sitemap\=https://zdodev.github.io/sitemap.xml
-
