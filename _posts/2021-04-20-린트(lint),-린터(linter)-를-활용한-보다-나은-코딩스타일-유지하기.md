@@ -1,5 +1,5 @@
 ---
-title: "린트(lint), 린터(linter)를 활용한 코딩스타일과 에러 검사하기"
+title: "린트(lint), 린터(linter)를 활용한 보다 나은 코딩스타일 유지하기"
 categories: 
   - Swift
 last_modified_at: 2021-04-21 00:30:00
