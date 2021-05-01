@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 locale                   : "ko-KR"
 title                    : "zerodotone"
 title_separator          : "-"
-subtitle                 : "😎"# site tagline that appears below site title in masthead
+subtitle                 : "코드와 글의 만남"# site tagline that appears below site title in masthead
 name                     : "zerodotone"
 description              : "An amazing website."
 url                      : # the base hostname & protocol for your site e.g. "https://zdodev.github.io"
@@ -97,7 +97,7 @@ author:
   name             : "zerodotone"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an **amazing** person."
-  location         : "my home"
+  location         : "입산 수행"
   email            :
   links:
     - label: "Email"
@@ -130,7 +130,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/zdodev"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
