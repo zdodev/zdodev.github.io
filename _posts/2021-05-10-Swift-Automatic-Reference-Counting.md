@@ -265,4 +265,4 @@ let coffee = Coffee(caramel: Caramel())
 
 ---
 
-> [Apple Responding to Memory Warnings](https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle/responding_to_memory_warnings)
+> [Swift Automatic Reference Counting](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
