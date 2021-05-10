@@ -259,7 +259,202 @@ class Caramel {
 let coffee = Coffee(caramel: Caramel())
 ```
 
+### Unowned Optional References
 
+Swift는 unowned optional reference도  제공합니다. unowned optional reference와 weak reference는 동일한 상황에서 사용할 수 있습니다. unowned optional reference 변수도 nil이 될 수 있습니다. 차이점은 unowned optional reference를 사용하여 참조할 때는 유요한 인스턴스를 참조하고 있는지 해제된 인스턴스 메모리 공간을 참조하고 있는지 항상 확인해야 합니다. 
+
+unowned optional references가 동작하는 방식을 설명한 코드입니다.
+
+```swift
+class Department {
+    var name: String
+    // Course strong reference
+    var courses = [Course]()
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+class Course {
+    var name: String
+    // Department unowned reference
+    unowned var department: Department
+    // Course unowned optional reference
+    // nextCourse에 유요한 인스턴스가 있다는 것은 작성자의 책임이다.
+    unowned var nextCourse: Course?
+    
+    init(name: String, in department: Department) {
+        self.name = name
+        self.department = department
+    }
+}
+
+// reference counting 1
+let department = Department(name: "Horticulture")
+
+// reference counting 1, department는 unowned
+let intro = Course(name: "Survey of Plants", in: department)
+// reference counting 1, department는 unowned
+let intermediate = Course(name: "Growing Common Herbs", in: department)
+// reference counting 1, department는 unowned
+let advanced = Course(name: "Caring for Tropical Plants", in: department)
+intro.nextCourse = intermediate
+intermediate.nextCourse = advanced
+department.courses = [intro, intermediate, advanced]
+```
+
+### Unowned References and Implicitly Unwrapped Optional Properties
+
+두 변수가 항상 값을 가지고 있어야 하며, 어느 변수도 nil이 되면 안되는 경우가 존재할 수 있습니다. 이때 초기화를 한 번 하고 나면, strong refernce cycle을 피하고 옵셔널 언래핑없이 직접 접근할 수 있는 방법이 있습니다.
+
+```swift
+class Country {
+    let name: String
+    // City strong reference
+    // 이니셜라이저에서 self를 사용하기 위해 implicitly unwrapped optional 선언
+    var capitalCity: City!
+    
+    init(name: String, capitalName: String) {
+        self.name = name
+        self.capitalCity = City(name: capitalName, country: self)
+    }
+}
+
+class City {
+    let name: String
+    // Country unowned reference
+    unowned let country: Country
+    
+    init(name: String, country: Country) {
+        self.name = name
+        self.country = country
+    }
+}
+
+var country = Country(name: "Canada", capitalName: "Ottawa")
+print("\(country.name)'s capital city is called \(country.capitalCity.name)")
+```
+
+## Strong Reference Cycles for Closures
+
+strong reference cycle은 클로저에서도 발생합니다. 클로저도 reference 타입이기 때문에 reference couting을 가지고 있습니다. 클로저를 클래스 인스턴스에 할당한 다음, 해당 클로저가 해당 인스턴스를 캡처할 때 발생합니다. 클래스 인스턴스는 클로저에 strong reference를 가지고, 클로저도 클래스 인스턴스에 strong reference를 가지면 strong reference cycle이 발생합니다.
+
+클로저가 self를 여러 번 참조하더라도 reference couting은 1만 증가합니다.
+
+클래스 인스턴스와 클로저가 strong reference cycle을 발생시키는 코드입니다.
+
+```swift
+class HTMLElement {
+    let name: String
+    let text: String?
+    
+    // 클로저를 strong reference
+    lazy var asHTML: () -> String = {
+        // 클래스 인스턴스 text를 strong reference
+        if let text = self.text {
+            // 클래스 인스턴스 text를 strong reference
+            return "<\(self.name)>\(text)</\(self.name)>"
+        } else {
+            // 클래스 인스턴스 text를 strong reference
+            return "<\(self.name) />"
+        }
+    }
+    
+    init(name: String, text: String? = nil) {
+        self.name = name
+        self.text = text
+    }
+    
+    deinit {
+        print("\(name) is being deinitialized")
+    }
+}
+
+let heading = HTMLElement(name: "h1")
+let defaultText = "some default text"
+heading.asHTML = {
+    "<\(heading.name)>\(heading.text ?? defaultText)</\(heading.name)>"
+}
+print(heading.asHTML())
+
+var paragraph: HTMLElement? = HTMLElement(name: "p", text: "hello world")
+print(paragraph!.asHTML())
+
+paragraph = nil
+// deinitializer가 호출되지 않습니다.
+```
+
+## Resolving Strong Reference Cycles for Closures
+
+클래스 인스턴스와 클로저 사이에 발생하는 strong reference cycle을 해결하기 위해서 캡처 리스트를 정의할 수 있습니다. 클로저가 참조 타입을 캡처할 때 weak reference 또는 unowned reference를 선언할 수 있습니다.
+
+### Defining a Capture List
+
+캡처할 대상을 대괄호 안에 작성합니다. 클로저의 맨 앞에 위치합니다. waek, unowned 정책을 알맞게 사용할 수 있습니다.
+
+```swift
+class Bread {
+    let delegate = Caramel()
+    
+    lazy var someClosure = {
+        // self, delegate를 캡처하겠습니다.
+        [unowned self, weak delegate = self.delegate]
+        (index: Int, stringToProcess: String) -> String in
+        // weak 옵셔널이므로 언래핑하여 사용
+        delegate!.flavor
+    }
+    
+    lazy var someClosure1 = {
+        // self, delegate를 캡처하겠습니다.
+        [unowned self, unowned delegate = self.delegate]
+        (index: Int, stringToProcess: String) -> String in
+        // unowned 이므로 바로 사용
+        delegate.flavor
+    }
+}
+```
+
+### Weak and Unowned References
+
+self를 weak 또는 unowned로 설정할 수 있습니다. self를 weak referenec하려면 [weak self], self를 unowned reference하려면 [unowned reference]를 사용합니다.
+
+```swift
+class HTMLElement1 {
+    let name: String
+    let text: String?
+    
+    // 클로저를 strong reference
+    lazy var asHTML: () -> String = {
+        [unowned self] in
+        // 클래스 인스턴스 text를 unowned reference
+        if let text = self.text {
+            // 클래스 인스턴스 text를 unowned reference
+            return "<\(self.name)>\(text)</\(self.name)>"
+        } else {
+            // 클래스 인스턴스 text를 unowned reference
+            return "<\(self.name) />"
+        }
+    }
+    
+    init(name: String, text: String? = nil) {
+        self.name = name
+        self.text = text
+    }
+    
+    deinit {
+        print("\(name) is being deinitialized")
+    }
+}
+
+var paragraph1: HTMLElement1? = HTMLElement1(name: "p", text: "hello world")
+print(paragraph1!.asHTML())
+paragraph1 = nil
+// p is being deinitialized
+
+```
+
+😎
 
 ### 참고 링크
 
