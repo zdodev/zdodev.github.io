@@ -20,7 +20,7 @@ title                    : "zerodotone"
 title_separator          : "-"
 subtitle                 : "코드와 글의 만남"# site tagline that appears below site title in masthead
 name                     : "zerodotone"
-description              : "An amazing website."
+description              : "초보 iOS 개발자입니다.😎"
 url                      : # the base hostname & protocol for your site e.g. "https://zdodev.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
