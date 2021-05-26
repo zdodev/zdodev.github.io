@@ -14,7 +14,7 @@ comments: true
 
 구조체 메서드를 구현하다가 다음의 에러가 발생했습니다.
 
-![Screen Shot 2021-05-27 at 12.45.25 AM](../assets/image/Screen Shot 2021-05-27 at 12.45.25 AM.png)
+![Screen Shot 2021-05-27 at 12.45.25 AM](/assets/image/Screen Shot 2021-05-27 at 12.45.25 AM.png)
 
 에러 내용을 보면 **불변 값에서 가변 멤버를 사용할 수 없습니다: 함수 호출은 불변 값을 반환합니다.** 라는 내용입니다. 위 구문에서 getTicketOffice() 메서드의 반환값의 `getTicket()` 메서드를 호출할 때 발생하는 것을 알게 되었습니다. 그래서 `getTicket()` 메서드를 찾아가보았습니다.
 
