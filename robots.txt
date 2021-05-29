@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zdodev.github.io/sitemap.xml
