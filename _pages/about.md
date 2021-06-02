@@ -1,13 +1,15 @@
 ---
 permalink: /about/
 title: "About"
-last_modified_at: 2021-05-01 00:30:00
+last_modified_at: 2021-06-03 01:30:00
 toc: true #Table of Contents
 ---
 
 ## Profile
 
 github link: [zdodev's github](https://github.com/zdodev)
+
+백준 링크: [Baekjoon iver0945](https://www.acmicpc.net/user/iver0945)
 
 바람따라 구름따라 딴따라 딴딴따.
 
