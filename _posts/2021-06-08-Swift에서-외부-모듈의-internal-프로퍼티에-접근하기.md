@@ -9,9 +9,9 @@ comments: true
 
 ---
 
-원래 Swift에서는 외부 모듈의 internal 프로퍼티에 당연히? 접근할 수 없습니다. 접근레벨이 public이거나 open인 경우에만 외부에서 사용할 수 있습니다.
+원래 Swift에서는 외부 모듈의 internal 프로퍼티에 당연히! 접근할 수 없습니다. 접근레벨이 public이거나 open인 경우에만 외부에서 사용할 수 있습니다.
 
-그런데 외부 모듈의 internal 프로퍼티에 접근할 수 있는? 케이스가 있습니다. UIAlertAction을 예로 설명해보겠습니다.
+그런데 외부 모듈의 internal 프로퍼티에 접근할 수 있는 케이스🤩가 있습니다. UIAlertAction을 예로 설명해보겠습니다.
 
 ```swift
 let action = UIAlertAction(title: "title", style: .default) { _ in
@@ -31,7 +31,9 @@ print(actionHandler)
 // <__NSMallocBlock__: 0x600003c735a0>
 ```
 
-handler를 가져왔지만, 타입이 NSMallocBlock 입니다. 이제 이것을 사용할 수 있도록 타입 캐스팅을 해보도록 하겠습니다. (위에서 정의한 handler의 타입은 `(UIAlertAction) -> Void` 입니다. 즉 함수인데, 첫 번째 소스코드에서 클로저를 전달한 것을 볼 수 있습니다.)
+handler를 가져왔지만, 타입이 NSMallocBlock 입니다. 이제 이것을 사용할 수 있도록 타입 캐스팅을 해보도록 하겠습니다. 위에서 정의한 handler의 타입은 `(UIAlertAction) -> Void` 입니다. 즉 함수입니다. 첫 번째 소스코드에서 클로저를 전달한 것(handler)을 볼 수 있습니다.
+
+다음은 handler를 사용하기 위해 타입 캐스팅을 하는 코드입니다.
 
 ```swift
 typealias AlertHandler = @convention(block) (UIAlertAction) -> Void
