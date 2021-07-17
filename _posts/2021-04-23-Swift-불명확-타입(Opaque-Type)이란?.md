@@ -27,6 +27,67 @@ comments: true
 >
 > some NSObject
 
+프로토콜을 하나 정의합니다.
+
+```swift
+protocol Beverage {
+    var count: Int { get }
+}
+```
+
+그 다음 이 프로토콜을 준수하는 타입을 만듭니다.
+
+```swift
+struct Milk: Beverage {
+    var count = 10
+}
+```
+
+그 다음 정의한 프로토콜을 반환 타입으로 가지는 함수를 정의합니다.
+
+```swift
+func test() -> Beverage {
+    Milk()
+}
+```
+
+불명확 타입의 설명이 꼭 프로토콜을 반환 타입으로 지정 못하게 설명되어 있는 것처럼 느껴졌는데 위 코드를 컴파일하면 문제없이 컴파일하고 사용할 수 있습니다.
+
+그런데 프로토콜을 반환 타입으로 사용하지 못하는 경우가 있습니다. 바로 프로토콜에 연관타입을 사용할 때 입니다. 위 코드의 프로토콜에 연관타입을 추가해보았습니다.
+
+```swift
+protocol Beverage {
+    associatedtype MyType
+    
+    var count: MyType { get }
+}
+
+struct Milk: Beverage {
+    var count = 10
+}
+
+func test() -> Beverage { // 여기에서 에러 발생!
+    Milk()
+}
+```
+
+test() 메서드에서 에러가 발생합니다. 에러 내용은 다음과 같습니다.
+
+> Protocol 'Beverage' can only be used as a generic constraint because it has Self or associated type requirements.
+
+Self 또는 연관타입에 대한 요구사항이 있기 때문에 사용할 수 없다는 것 입니다. 여기에서 불명확 타입을 적용하면 해당 프로토콜 타입을 반환 타입으로 사용할 수 있습니다.
+
+```swift
+func test() -> some Beverage {
+    Milk()
+}
+
+let beverage = test() // beverage의 타입은 some Beverage
+print(beverage.count)
+```
+
+불명확 타입을 적용하면 정상적으로 실행을 할 수 있습니다. 불명확 타입은 구체적인 타입(Milk)을 감추고 어떠한 프로토콜을 따른다는 값을 반환할 때 유용하게 사용할 수 있습니다.
+
 ### 참고 링크
 
 ---
