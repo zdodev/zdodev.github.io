@@ -89,5 +89,11 @@ ObservableType 프로토콜의 just 메서드(연산자)에서 알 수 있듯이
 >
 > [Why use Rx?](https://zeddios.tistory.com/689)
 >
-> [[RxSwift] 들어가기 전에](https://sujinnaljin.medium.com/rxswift-%EC%8B%9C%EC%9E%91-497dfada1e22)
+> [[RxSwift] 들어가기 전에 시리즈](https://sujinnaljin.medium.com/rxswift-%EC%8B%9C%EC%9E%91-497dfada1e22)
+>
+> [1. RxJava - Rxjava란? 시리즈](https://imleaf.tistory.com/28?category=911174)
+>
+> [RxSwift vs Combine - 스펙 / 성능 개념 비교](https://eunjin3786.tistory.com/67)
+>
+> [Combine (1) - Publisher, Subscriber 시리즈](https://zeddios.tistory.com/925?category=842493)
 
