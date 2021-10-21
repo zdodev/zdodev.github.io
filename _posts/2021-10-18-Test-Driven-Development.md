@@ -3,7 +3,7 @@ title: "Test Driven Development, 테스트 주도 개발"
 categories:
   - Swift
   - TDD
-last_modified_at: 2021-10-18 01:00:00
+last_modified_at: 2021-10-21 23:00:00
 toc: true #Table of Contents
 comments: true
 
@@ -152,6 +152,12 @@ Mock 프레임워크는 동적으로 Mock 객체를 만들어주는 프레임워
 
 ### 주기의 미세 조정
 
+---
+
+- 어떤 객체가 손쉽게 테스트할 수 없을 정도로 몸집이 크거나 테스트가 실패한 이유를 해석하기 어렵다면 해당 객체를 분해한다. 그러고 나서 새로 나눈 부분들을 따로따로 단위 테스트한다.
+- 테스트를 작성할 때 우리는 "이게 동작한다고 해서 누가 알아주기나 하겠어?" 라고 자문한다. 이 질문에 대한 올바른 답이 대상 객체에 있는 게 아니라면 아마 그 답은 새로운 협력 객체를 도입할 때에 있을 것이다.
+- 어떤 객체의 테스트가 너무 복잡해서 수행할 준비를 할 수 없을 경우, 즉 코드를 적절한 상태에 두기엔 유동적인 부분이 너무 많다면 협력 객체의 일부를 포장하는 방법을 고려해본다.
+
 ### 참고 URL
 
 ---
@@ -161,6 +167,8 @@ Mock 프레임워크는 동적으로 Mock 객체를 만들어주는 프레임워
 > [도서: Clean Code](https://book.naver.com/bookdb/book_detail.nhn?bid=7390287)
 >
 > [도서: 테스트 주도 개발 TDD 실천법과 도구](https://book.naver.com/bookdb/book_detail.nhn?bid=6291557)
+>
+> [도서: 테스트 주도 개발로 배우는 객체 지향 설계와 실천](https://book.naver.com/bookdb/book_detail.nhn?bid=7231228)
 >
 > [Wiki Unit Testing](https://en.wikipedia.org/wiki/Unit_testing)
 >
