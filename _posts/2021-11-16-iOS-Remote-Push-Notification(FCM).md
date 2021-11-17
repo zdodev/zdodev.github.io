@@ -3,7 +3,7 @@ title: "iOS Remote Push Notification(FCM), 원격 알림 서비스"
 categories:
   - iOS
   - Notification
-last_modified_at: 2021-11-16 14:00:00
+last_modified_at: 2021-11-17 10:30:00
 toc: true #Table of Contents
 comments: true
 
@@ -27,3 +27,5 @@ Apple 인증키(p8) 또는 인증서(p12) 생성 및 등록
 ---
 
 >   [Firebase 클라우드 메시징](https://firebase.google.com/docs/cloud-messaging)
+>
+>   [[iOS Firebase APN(Apple Push Notification) 세팅하기]](https://sweetdev.tistory.com/476)
