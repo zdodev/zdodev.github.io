@@ -16,6 +16,12 @@ Firebase library 설치
 
 Firebase console iOS 프로젝트 생성
 
+Apple 인증키(p8) 또는 인증서(p12) 생성 및 등록
+
+인증키는 새로운 인증 방식으로 Keys에서 생성, 갱신 없이 사용 가능
+
+인증서는 이전 인증 방식으로 Certificates에서 생성, 1년마다 갱신해야 사용 가능
+
 ### 참고 URL
 
 ---
