@@ -2,7 +2,7 @@
 title: "오늘의 지식: Swift Automatic Reference Counting"
 categories: 
   - Swift
-last_modified_at: 2021-06-08 23:30:00
+last_modified_at: 2021-11-25 11:30:00
 toc: true #Table of Contents
 comments: true
 
@@ -299,7 +299,7 @@ class Course {
     // Department unowned reference
     unowned var department: Department
     // Course unowned optional reference
-    // nextCourse에 유요한 인스턴스가 있다는 것은 작성자의 책임이다.
+    // nextCourse에 유효한 인스턴스가 있다는 것은 작성자의 책임입니다.
     unowned var nextCourse: Course?
     
     init(name: String, in department: Department) {
