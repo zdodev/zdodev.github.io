@@ -52,6 +52,8 @@ extension ObservableType {
 
 "`Observable` 이 데이터를 방출하면 그것을 가지고 연산을 수행하면 된다."
 
+구독하는 동안에는 `Observable`이 데이터를 방출한다.
+
 `Observable` 이 발생시키는 이벤트
 
 - onNext: Action to invoke for each element in the observable sequence.
