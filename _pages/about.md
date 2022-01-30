@@ -9,8 +9,6 @@ toc: true #Table of Contents
 
 github link: [zdodev's github](https://github.com/zdodev)
 
-백준 링크: [Baekjoon iver0945](https://www.acmicpc.net/user/iver0945)
-
 바람따라 구름따라 딴따라 딴딴따.
 
 Swift와 iOS 정복하기.
@@ -23,3 +21,8 @@ Swift와 iOS 정복하기.
 
 반복 작업하게 만드는 것 정리하기.
 
+
+
+개발을 잘하기 위한 마음가짐 그 첫 번째.
+
+정답이 없음을 받아들이고 인정하라.
