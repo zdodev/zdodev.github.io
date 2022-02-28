@@ -2,7 +2,7 @@
 title: "Swift 불명확 타입(Opaque Type)이란?"
 categories: 
   - Swift
-last_modified_at: 2021-07-17 14:30:00
+last_modified_at: 2022-02-28 12:00:00
 toc: true #Table of Contents
 comments: true
 
@@ -87,6 +87,15 @@ print(beverage.count)
 ```
 
 불명확 타입을 적용하면 정상적으로 실행을 할 수 있습니다. 불명확 타입은 구체적인 타입(Milk)을 감추고 어떠한 프로토콜을 따른다는 값을 반환할 때 유용하게 사용할 수 있습니다.
+
+불명확 타입을 반환하는 것과 프로토콜을 반환하는 것의 차이점은 타입의 정체성(identity) 유무의 차이가 있습니다.
+
+불명확 타입의 경우 동일한 구체 타입을 반환해야 하지만, 프로토콜의 경우 해당 프로토콜을 준수하는 어떠한 구체 타입이든 반환할 수 있습니다.
+
+프로토콜을 반환한 타입은 다른 제네릭 타입에 사용할 수 없습니다.
+> Protocol 'someProtocol' as a type cannot conform to the protocol itself
+
+불명확 타입은 라이브러리, 프레임워크를 작성하거나 프로토콜을 리턴할 때 Self, associated 요구 사항을 가진 경우 사용할 수 있습니다.
 
 ### 참고 링크
 
