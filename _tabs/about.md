@@ -34,12 +34,12 @@ order: 4
 
 ---
 
-## 자격 및 플랫폼
+## Certifications
 - 2018.06.29 정보보안기사
 - 2016.05.06 정보처리기사
 
 ---
 
-## 📬 Contact
+## Contact
 - **Email**: iver0945@gmail.com
 - **GitHub**: [github.com/zdodev](https://github.com/zdodev)
