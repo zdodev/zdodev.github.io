@@ -11,13 +11,10 @@ order: 4
 
 ---
 
-## 🛠 기술 및 도구
-
-| 분류 | 내용 |
-| :--- | :--- |
-| **Analysis Tools** | Burp Suite, Wireshark, Frida |
-| **Languages** | Python, JavaScript, Bash, C/C++ |
-| **Environments** | Linux (Ubuntu, Kali), Docker |
+## 🎯 주요 관심사
+- **Web Application Security**: 세션 관리, 인증/인가 취약점, XSS/CSRF 방어 메커니즘
+- **Packet & Traffic Analysis**: 프록시 기반 인터셉션, SSL Pinning 분석 및 우회 기법
+- **Vulnerability Research**: 최신 CVE 분석, 취약점 분류 체계(OWASP, CCE/CWE) 연구
 
 ---
 
