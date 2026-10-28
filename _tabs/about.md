@@ -18,6 +18,17 @@ order: 4
 
 ---
 
+## 기술 및 도구
+
+| 분류 | 내용 |
+| :--- | :--- |
+| **Analysis Tools** | Burp Suite, Wireshark, Frida |
+| **Languages** | Python, JavaScript, Bash, C/C++ |
+| **Environments** | Linux (Ubuntu, Kali), Docker |
+
+
+---
+
 ## 수상 기록
 - **[2014 행복한 과학기술 공모전 장려상 수상](https://www.yna.co.kr/view/PYH20150702100800013)**
 
