@@ -26,19 +26,14 @@ order: 4
 | **Languages** | Python, JavaScript, Bash, C/C++ |
 | **Environments** | Linux (Ubuntu, Kali), Docker |
 
-
 ---
 
-## 수상 기록
-- **[2014 행복한 과학기술 공모전 장려상 수상](https://www.yna.co.kr/view/PYH20150702100800013)**
-
----
-
-## Certifications
+## Certifications & Award
 - 2018.06.29 정보보안기사
 - 2017.04.19 CPPG 개인정보관리사
 - 2016.05.06 정보처리기사
 - 2015.11.27 리눅스마스터 1급
+- **[2014 행복한 과학기술 공모전 장려상 수상](https://www.yna.co.kr/view/PYH20150702100800013)**
 
 ---
 
