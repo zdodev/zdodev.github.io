@@ -9,88 +9,108 @@ tags:
 last_modified_at: 2026-11-02 21:30:00 +0900
 ---
 
-macOS 초기 환경 설정 시 필요한 내용을 정리한다.
+동기(Synchronous)는 작업을 순서대로 실행하며, 현재 작업이 끝날 때까지 다음 작업이 기다리는 방식이라면 비동기(Asynchronous)는 어떤 작업을 시작한 뒤, 그 작업이 완료될 때까지 기다리지 않고 다른 작업을 수행할 수 있는 처리 방식이다.
 
-# 기본 애플리케이션 설치
+# 1. 동기와 비동기
+## 동기 방식
 
-- Homebrew: 패키지 설치하고 관리하기 위한 패키지 매니저
-- Obsidian: 메모장
-- LinearMouse: 마우스와 트랙패드 세부 사항 조절 및 뒤로가기, 스크롤 설정
-- Ghostty: 이쁘고 빠른 터미널
-- macshot: 스크린샷 도구
+동기 방식은 작업을 순서대로 실행하며, 현재 작업이 끝날 때까지 다음 작업이 기다리는 방식.
 
-# 터미널 환경 구성
+다음과 같은 코드는 동기 방식으로 동작한다.
 
-필요한 프로그램 설치
+```python
+import time
 
-```zsh
-brew install font-jetbrains-mono-nerd-font
-brew install starship zsh-autosuggestions zsh-syntax-highlighting
-brew install eza bat fzf zoxide
+def task_a():
+	print("A 작업 시작")
+	time.sleep(3)
+	print("A 작업 완료")
+	
+def task_b():
+	print("B 작업 시작")
+	time.sleep(1)
+	print("B 작업 완료")
+	
+task_a()
+task_b()
 ```
 
-## Ghostty 환경 설정
+실행 결과:
 
 ```text
-# Theme
-theme = Catppuccin Mocha
-
-# Font
-font-family = JetBrainsMono Nerd Font
-font-size = 16
-
-# Window
-window-padding-x = 14
-window-padding-y = 12
-window-decoration = true
-
-# Transparency
-background-opacity = 0.92
-background-blur = 20
-
-# Cursor
-cursor-style = block
-cursor-style-blink = false
-
-# macOS
-macos-titlebar-style = tabs
+A 작업 시작
+(3초 대기)
+A 작업 완료
+B 작업 시작
+(1초 대기)
+B 작업 완료
 ```
 
-## Zsh 설정
+전체 실행 시간은 4초가 된다.
 
-**~/.zshrc**
+## 비동기 방식
+
+비동기 방식은 작업을 시작한 뒤, 해당 작업의 완료를 기다리는 동안 다른 작업을 수행할 수 있는 방식.
+
+Python 에서는 **asyncio** 를 사용해서 비동기 처리를 할 수 있다.
+
+```python
+import asyncio
+
+async def task_a(): # 비동기 함수로 선언
+    print("A 작업 시작")
+    await asyncio.sleep(3) # 비동기 작업의 결과를 기다리면서 실행 제어를 넘김
+    print("A 작업 완료")
+
+async def task_b(): # 비동기 함수로 선언
+    print("B 작업 시작")
+    await asyncio.sleep(1) # 비동기 작업의 결과를 기다리면서 실행 제어를 넘김
+    print("B 작업 완료")
+
+async def main():
+    await asyncio.gather( # 여러 비동기 작업을 동시 실행
+        task_a(),
+        task_b()
+    )
+
+asyncio.run(main())
+```
+
+실행 결과:
 
 ```text
-# Starship
-eval "$(starship init zsh)"
-
-# Directory navigation
-eval "$(zoxide init zsh)"
-
-# Zsh plugins
-source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
-# Aliases
-alias l="eza -lah --icons --git"
-alias ls="eza --icons --group-directories-first"
-alias ll="eza -lah --icons --git"
-alias cat="bat"
-alias cd="z"
+A 작업 시작
+B 작업 시작
+(1초 대기)
+B 작업 완료
+(2초 대기)
+A 작업 완료
 ```
 
-# ruby 버전 관리 환경 구성
+전체 실행 시간은 3초가 된다.
 
-```zsh
-brew install rbenv
+# 2. 비동기를 사용하는 이유
 
-rbenv install -l
+비동기 작업 방식이 유용한 상황은 작업이 완료되기까지 대기 시간이 긴 경우이다. 다양한 애플리케이션에서 대기 시간이 발생하는 작업에 대해서 유용하게 사용할 수 있다.
 
-rbenv install <version>
+| 작업        | 대기 상황               |
+| --------- | ------------------- |
+| HTTP 요청   | 서버의 응답을 기다리는 상황     |
+| 데이터베이스 조회 | DB의 응답을 기다리는 상황     |
+| 파일 읽기     | 디스크에서 데이터를 읽는 상황    |
+| 네트워크 통신   | 다른 시스템과 통신을 기다리는 상황 |
 
-rbenv global 3.4.0
+예를 들어, 웹 서버가 1,000명의 사용자로부터 HTTP 요청을 받는다고 한다면, 동기 방식에서는 첫 번째 요청을 처리하는 시간 동안 다음 요청이 대기를 해야 해서 응답이 오래 걸릴 수 밖에 없지만 비동기 방식에서는 첫 번째 요청을 처리하는 동안 두 번째, 세 번째 요청을 처리할 수 있는 장점이 있다. 보통 네트워크 I/O가 많이 발생하는 애플리케이션에서 비동기는 성능 측면에서 큰 장점을 제공한다.
 
-gem install jekyll
+# 3. 비동기와 멀티스레드, 멀티프로세스의 차이
 
-bundle install
-```
+비동기의 동작 방식을 보면 병렬처럼 보이지만 실제로는 다른 개념이다.
+
+| 구분     | 개념                      |
+| ------ | ----------------------- |
+| 동기     | 작업 완료를 기다린 후 다음 작업을 진행  |
+| 비동기    | 작업 완료를 기다리는 동안 다른 작업 진행 |
+| 멀티스레드  | 여러 스레드에서 작업 실행          |
+| 멀티프로세스 | 여러 프로세스에서 작업 실행         |
+
+비동기는 작업을 기다리는 방식에 대한 개념으로 멀티스레드와는 구분해서 생각해야 한다. 실제로는 작업을 번갈아 처리할 수 있는 개념으로 작업이 병렬로 처리되는 개념과 다르다.

@@ -16,9 +16,14 @@ subtitle    : "romance hacker"
 description : "romance hacker"
 url         : "https://zdodev.github.io"
 baseurl     : ""
+enable_copy_code_button : true
 
 github_username: "zdodev"
 search: true
+search_full_content : true
+search_provider : "lunr"
+lunr:
+  search_within_pages : true
 
 # SEO Related
 google_site_verification : "__1nI3KLuxzmINF5ZfWZeBO6caqRmlCoKMTrB2JQj4M"
