@@ -10,24 +10,29 @@ remote_theme          : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin : "dark"
 
 # Site settings
-locale   : "ko-KR"
-title    : "zdodev"
-email    : "iver0945@gmail.com"
-subtitle : "romance hacker"
-description: "romance hacker"
+locale      : "ko-KR"
+title       : "zdodev"
+subtitle    : "romance hacker"
+description : "romance hacker"
+url         : "https://zdodev.github.io"
+baseurl     : ""
+
 github_username: "zdodev"
 search: true
 
 # SEO Related
 google_site_verification : "__1nI3KLuxzmINF5ZfWZeBO6caqRmlCoKMTrB2JQj4M"
 
-# Build settings
+# Conversion
 markdown: kramdown
+
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# Pagination with jekyll-paginate
+paginate: 10 # amount of posts to show
+paginate_path: /page:num/
 
 include:
   - _pages
@@ -53,10 +58,21 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
+# Analytics
+analytics:
+  provider : "google-gtag"
+  google:
+    tracking_id  : "G-H597KHMMX4"
+    anonymize_ip : # true, false (default)
+
+
+# Site Author
 author:
-  name   : "First Lastname"
+  name   : "zdodev"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "My awesome biography constrained to a sentence or two goes here."
+  location : "Somewhere"
+  email    : "iver0945@gmail.com"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -83,6 +99,14 @@ footer:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
 
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# Defaults
 defaults:
   # _posts
   - scope:
@@ -106,10 +130,3 @@ defaults:
     values:
       layout: single
       author_profile: true
-
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
