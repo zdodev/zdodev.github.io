@@ -26,7 +26,8 @@ lunr:
   search_within_pages : true
 
 # SEO Related
-google_site_verification : "__1nI3KLuxzmINF5ZfWZeBO6caqRmlCoKMTrB2JQj4M"
+google_site_verification: "__1nI3KLuxzmINF5ZfWZeBO6caqRmlCoKMTrB2JQj4M"
+naver_site_verification : "naver014a5560831950e6d5af8c8ceb1b1096.html"
 
 # Conversion
 markdown: kramdown
